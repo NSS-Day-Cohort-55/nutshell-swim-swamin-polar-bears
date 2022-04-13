@@ -22,6 +22,9 @@ export const ApplicationViews = ({isAuthenticated, setIsAuthenticated}) => {
         <Route path="/tasks" element={""} />
         <Route path="/events" element={""} />
       </Route>
+
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register/>}/>
     </Routes>
     </>
   )
