@@ -5,6 +5,8 @@ import { Register } from "./auth/Register";
 import { FriendList } from "./Friends/FriendList";
 import { TaskList } from "./Tasks/TaskList";
 import { TaskDetail } from "./Tasks/TaskDetail";
+import { EventList } from "./events/EventList";
+import { PostEvent } from "./events/PostEvent";
 import { ArticleList } from "./articles/ArticleList"
 import { CreateArticle } from "./articles/CreateArticle"
 
@@ -35,6 +37,9 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser, getLoggedInUser
 
           } />
           <Route path="/events" element={""} />
+          <Route path="/tasks" element={""} />
+          <Route path="/events" element={<EventList/>} />
+          <Route path="/events/create" element={<PostEvent getLoggedInUser={getLoggedInUser}/>}/>
         </Route>
 
         <Route path="/login" element={<Login setAuthUser={setAuthUser} />} />
