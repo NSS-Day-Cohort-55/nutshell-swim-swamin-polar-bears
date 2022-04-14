@@ -16,3 +16,9 @@ export const addArticles = (articleObj) =>{
         body: JSON.stringify(articleObj)
     }).then(response => response.json())
 }
+
+export const deleteArticle = (articleId) =>{
+    return fetch(`${apiURL}/articles/${articleId}`,{
+        method: "DELETE"
+    }).then(response => response.json())
+}

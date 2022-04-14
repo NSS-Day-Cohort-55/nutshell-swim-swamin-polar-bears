@@ -1,7 +1,7 @@
 import react, {useState, useEffect} from "react";
 import { ArticleCard } from "./ArticleCard";
 import { useNavigate } from "react-router-dom";
-import { getArticles} from "../modules/ArticleManager"
+import { getArticles, deleteArticle} from "../modules/ArticleManager"
 
 export const ArticleList = () =>{
 
@@ -10,11 +10,22 @@ export const ArticleList = () =>{
 
     const getAllArticles = () =>{
         return getArticles()
-            .then(article => updateArticles(article))
+            .then(article => {
+                article.sort((a, b) =>{
+                    return new Date(a.timestamp) - new Date(b.timestamp)
+                }).then(updateArticles(article))
+            })
+    }
+
+    const handleDeleteArticle = (articleObj) =>{
+        deleteArticle(articleObj)
+            .then( () => getAllArticles())
     }
 
     useEffect(()=>{
+        
         getAllArticles()
+        
     }, [])
 
     return (
@@ -23,7 +34,7 @@ export const ArticleList = () =>{
                 <button type="button" onClick={()=> {navigate("/create/")}}>Add new article</button>
             </section>
             <div className="articles_card_container">
-                {articles.map(article => <ArticleCard key={article.id} article={article}/>)}
+                {articles.map(article => <ArticleCard key={article.id} article={article} handleDeleteArticle={handleDeleteArticle}/>)}
             </div>
 
         </>

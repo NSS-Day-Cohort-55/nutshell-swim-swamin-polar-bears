@@ -16,7 +16,7 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser , getLoggedInUse
       <Routes>
         <Route path="/" element={<PrivateOutlet />}>
         <Route path="/" element={<ArticleList/>}/>
-        <Route path="/create/" element={<CreateArticle/>}/>
+        <Route path="/create/" element={<CreateArticle getLoggedInUser={getLoggedInUser}/>}/>
           <Route
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
@@ -31,4 +31,5 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser , getLoggedInUse
       </Routes>
     </>
   );
+  
 };
