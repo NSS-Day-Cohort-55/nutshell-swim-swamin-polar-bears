@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAllUsers, addFriend, existingFriendShipCheck } from "../modules/FriendManager";
+import {
+  getAllUsers,
+  addFriend,
+  existingFriendShipCheck,
+} from "../modules/FriendManager";
 import { UserCard } from "./UserCard";
 
 export const UserList = ({ getLoggedInUser }) => {
@@ -19,10 +23,12 @@ export const UserList = ({ getLoggedInUser }) => {
       userId: id,
       currentUserId: getLoggedInUser(),
     };
-    if ((newFriend.userId !== newFriend.currentUserId) && (existingFriendShipCheck(newFriend))) {
+    if (newFriend.userId !== newFriend.currentUserId) {
       addFriend(newFriend).then(() => getAllUsers().then(setUsers));
     } else {
-        window.alert('Cannot add friend. You have tried to add yourself or an existing friend.')
+      window.alert(
+        "Cannot add friend. You have tried to add yourself or an existing friend."
+      );
     }
   };
 
