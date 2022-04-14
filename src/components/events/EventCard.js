@@ -20,7 +20,7 @@ export const EventCard = ({ eventObj, handleDeleteEvent }) => {
                 <p>{formatDate(eventObj.date)}</p>
                 <p>{eventObj.location}</p>
                 <p>{eventObj.description}</p>
-                <button type="button" onClick={() => handleDeleteEvent(eventObj)}>Delete</button>
+                <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>
             </div>
         </div>
     )
