@@ -4,8 +4,10 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import { FriendList } from "./Friends/FriendList";
 import { UserList } from "./users/UserList";
-import { ArticleList } from "./articles/ArticleList"
-import { CreateArticle } from "./articles/CreateArticle"
+import { EventList } from "./events/EventList";
+import { PostEvent } from "./events/PostEvent";
+import { ArticleList } from "./articles/ArticleList";
+import { CreateArticle } from "./articles/CreateArticle";
 
 export const ApplicationViews = ({
   isAuthenticated,
@@ -20,18 +22,25 @@ export const ApplicationViews = ({
     <>
       <Routes>
         <Route path="/" element={<PrivateOutlet />}>
-        <Route path="/" element={<ArticleList/>}/>
-        <Route path="/create/" element={<CreateArticle getLoggedInUser={getLoggedInUser}/>}/>
+          <Route path="/" element={<ArticleList />} />
+          <Route
+            path="/create/"
+            element={<CreateArticle getLoggedInUser={getLoggedInUser} />}
+          />
           <Route
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
           />
           <Route path="/messages" element={""} />
           <Route path="/tasks" element={""} />
-          <Route path="/events" element={""} />
           <Route
             path="/users"
             element={<UserList getLoggedInUser={getLoggedInUser} />}
+          />
+          <Route path="/events" element={<EventList />} />
+          <Route
+            path="/events/create"
+            element={<PostEvent getLoggedInUser={getLoggedInUser} />}
           />
         </Route>
 
