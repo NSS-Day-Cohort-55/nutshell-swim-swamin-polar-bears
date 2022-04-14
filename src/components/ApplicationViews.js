@@ -5,6 +5,8 @@ import { Register } from "./auth/Register";
 import { FriendList } from "./Friends/FriendList";
 import { TaskList } from "./Tasks/TaskList";
 import { TaskDetail } from "./Tasks/TaskDetail";
+import { ArticleList } from "./articles/ArticleList"
+import { CreateArticle } from "./articles/CreateArticle"
 
 export const ApplicationViews = ({ isAuthenticated, setAuthUser, getLoggedInUser }) => {
   const PrivateOutlet = () => {
@@ -15,6 +17,8 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser, getLoggedInUser
     <>
       <Routes>
         <Route path="/" element={<PrivateOutlet />}>
+        <Route path="/" element={<ArticleList/>}/>
+        <Route path="/create/" element={<CreateArticle getLoggedInUser={getLoggedInUser}/>}/>
           <Route
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
@@ -38,4 +42,5 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser, getLoggedInUser
       </Routes>
     </>
   );
+  
 };
