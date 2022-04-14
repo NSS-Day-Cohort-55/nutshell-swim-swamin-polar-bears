@@ -8,6 +8,7 @@ import { EventList } from "./events/EventList";
 import { PostEvent } from "./events/PostEvent";
 import { ArticleList } from "./articles/ArticleList";
 import { CreateArticle } from "./articles/CreateArticle";
+import { ArticleEditForm } from "./articles/ArticleEditForm";
 
 export const ApplicationViews = ({
   isAuthenticated,
@@ -22,11 +23,12 @@ export const ApplicationViews = ({
     <>
       <Routes>
         <Route path="/" element={<PrivateOutlet />}>
-          <Route path="/" element={<ArticleList />} />
+          <Route path="/" element={<ArticleList getLoggedInUser={getLoggedInUser} />} />
           <Route
             path="/create/"
             element={<CreateArticle getLoggedInUser={getLoggedInUser} />}
           />
+          <Route path="/:articleId/edit" element={<ArticleEditForm getLoggedInUser={getLoggedInUser}/>}/>
           <Route
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
