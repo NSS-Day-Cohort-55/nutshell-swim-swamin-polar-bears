@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { EventCard } from './EventCard.js';
-import { getAllEvents } from '../modules/EventManager';
+import { deleteEvent, getAllEvents,  } from '../modules/EventManager';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -16,6 +16,11 @@ export const EventList = () => {
         })
     }
 
+    const handleDeleteEvent = id => {
+        deleteEvent(id)
+        .then(() => getAllEvents().then(setEvents))
+    }
+
     useEffect(() => {
         getEvents();
     }, []);
@@ -23,8 +28,13 @@ export const EventList = () => {
 
     return (
         <>
+            <button type='button'
+                className='btn'
+                onClick={() => {navigate("/events/create")}}>
+                Bust a nut
+            </button>
             <div className='cards-container'>
-                {events.map(event=> <EventCard eventObj={event} key={event.id}/>)}
+                {events.map(event=> <EventCard eventObj={event} key={event.id} handleDeleteEvent={handleDeleteEvent}/>)}
             </div>
         </>
     )

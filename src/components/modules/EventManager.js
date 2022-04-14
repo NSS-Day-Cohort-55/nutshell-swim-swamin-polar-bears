@@ -19,3 +19,8 @@ export const addEvent = (newEvent) => {
         body: JSON.stringify(newEvent)
     }).then(response => response.json())
 }
+export const deleteEvent = (eventId) => {
+    return fetch(`${remoteURL}/events/${eventId}`, {
+        method: "DELETE"
+    }).then(result => result.json())
+}
