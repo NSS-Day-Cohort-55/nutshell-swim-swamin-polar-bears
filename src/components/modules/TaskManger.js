@@ -5,8 +5,29 @@ export const getTaskById = (taskId) => {
     .then(parseResponse => parseResponse.json())
 }
 
-export const deleteAnimal = (taskId) => {
-    return fetch(`${remoteURL}/tasks/${taskId}`)
-    .then(parseResponse => parseResponse)
+export const deleteTask = (taskId) => {
+    return fetch(`${remoteURL}/tasks/${taskId}`,{
+        method: "DELETE"
+    }).then(result => result.json())
 
+}
+
+export const addTask = (newTask) => {
+    return fetch(`${remoteURL}/tasks`,{
+        method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newTask)
+  }).then(response => response.json())
+}
+
+export const updateTask  = (editedTask) => {
+	return fetch(`${remoteURL}/tasks/${editedTask.id}`, {
+		method: "PATCH",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(editedTask)
+	}).then(data => data.json());
 }
