@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const FriendCard = ({ friend }) => {
-  console.log(friend);
+export const FriendCard = ({ friend, handleDeleteFriend }) => {
   return (
     <>
       <div className="card">
@@ -11,6 +10,9 @@ export const FriendCard = ({ friend }) => {
             Name: <span className="card-friendname">{friend.user?.name}</span>
           </h3>
           <p>Email: {friend.user?.email}</p>
+          <button type="button" onClick={() => handleDeleteFriend(friend.id)}>
+          UnFriend
+        </button>
         </div>
       </div>
     </>
