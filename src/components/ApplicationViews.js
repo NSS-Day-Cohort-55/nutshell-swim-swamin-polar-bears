@@ -2,12 +2,13 @@ import React from "react";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-import { FriendList } from "./Friends/FriendList";
+import { FriendList } from "./friends/FriendList";
 import { UserList } from "./users/UserList";
 import { EventList } from "./events/EventList";
 import { PostEvent } from "./events/PostEvent";
 import { ArticleList } from "./articles/ArticleList";
 import { CreateArticle } from "./articles/CreateArticle";
+import { MessageList } from "./messages/MessageList";
 
 export const ApplicationViews = ({
   isAuthenticated,
@@ -31,7 +32,7 @@ export const ApplicationViews = ({
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
           />
-          <Route path="/messages" element={""} />
+          <Route path="/messages" element={<MessageList getLoggedInUser={getLoggedInUser} />} />
           <Route path="/tasks" element={""} />
           <Route
             path="/users"
