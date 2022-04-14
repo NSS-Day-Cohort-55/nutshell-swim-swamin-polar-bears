@@ -4,6 +4,8 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import { FriendList } from "./Friends/FriendList";
 import { UserList } from "./users/UserList";
+import { ArticleList } from "./articles/ArticleList"
+import { CreateArticle } from "./articles/CreateArticle"
 
 export const ApplicationViews = ({
   isAuthenticated,
@@ -18,6 +20,8 @@ export const ApplicationViews = ({
     <>
       <Routes>
         <Route path="/" element={<PrivateOutlet />}>
+        <Route path="/" element={<ArticleList/>}/>
+        <Route path="/create/" element={<CreateArticle getLoggedInUser={getLoggedInUser}/>}/>
           <Route
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
