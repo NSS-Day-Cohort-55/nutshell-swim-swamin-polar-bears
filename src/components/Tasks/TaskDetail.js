@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getTaskById, deleteTask } from "../modules/TaskManger.js";
+import { getTaskById, deleteTask, getAllTasks } from "../modules/TaskManger.js";
 import { useParams, useNavigate } from "react-router-dom";
 
 export const TaskDetail = () => {
@@ -10,7 +10,7 @@ export const TaskDetail = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        getTaskById(taskId)
+        getAllTasks(taskId)
             .then(task => {
                 setTask(task);
                 setIsLoading(false);

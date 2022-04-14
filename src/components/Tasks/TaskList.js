@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TaskCard } from './TaskCard';
-import { getTaskById, deleteTask } from '../modules/TaskManger';
+import { getTaskById, getAllTasks, deleteTask } from '../modules/TaskManger';
 import { useNavigate } from 'react-router-dom';
 
 export const TaskList = () => {
@@ -8,12 +8,12 @@ export const TaskList = () => {
     const navigate = useNavigate();
 
     const handleDeleteTask = (id) => {
-        delete (id)
-            .then(() => getTaskById().then(setTasks))
+        deleteTask(id)
+            .then(() => getAllTasks().then(setTasks))
 
     };
     const getTasks = () => {
-        return getTaskById()
+        return getAllTasks()
             .then(tasks => {
                 setTasks(tasks)
             })

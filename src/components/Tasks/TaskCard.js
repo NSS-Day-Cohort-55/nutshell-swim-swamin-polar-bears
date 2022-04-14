@@ -6,7 +6,7 @@ export const TaskCard = ({ task, handleDeleteTask }) => {
     <div className="card">
       <div className="card-content">
         <picture>
-          <img src={'/Taskimg.png'} alt="My Task" />
+          <img src={'./images/Taskimg.png'} width="50" alt="My Task" />
         </picture>
         <h3>Name: <span className="card-taskname">
           {task.name}

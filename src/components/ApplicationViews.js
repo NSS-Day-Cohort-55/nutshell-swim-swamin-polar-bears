@@ -19,27 +19,19 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser, getLoggedInUser
     <>
       <Routes>
         <Route path="/" element={<PrivateOutlet />}>
-        <Route path="/" element={<ArticleList/>}/>
-        <Route path="/create/" element={<CreateArticle getLoggedInUser={getLoggedInUser}/>}/>
+          <Route path="/" element={<ArticleList />} />
+          <Route path="/create/" element={<CreateArticle getLoggedInUser={getLoggedInUser} />} />
           <Route
             path="/friends"
             element={<FriendList getLoggedInUser={getLoggedInUser} />}
           />
           <Route path="/messages" element={""} />
-          <Route exact path="/tasks" element={
+          <Route exact path="/tasks" element={<TaskList />} />
+          <Route exact path="/tasks/:taskId" element={<TaskDetail />} />
+          {/* <Route exact path="/tasks/create" element={<TaskCreate />} /> */}
 
-            <TaskList />
-
-          } />
-          <Route exact path="/tasks/:taskId" element={
-
-            <TaskDetail />
-
-          } />
-          <Route path="/events" element={""} />
-          <Route path="/tasks" element={""} />
-          <Route path="/events" element={<EventList/>} />
-          <Route path="/events/create" element={<PostEvent getLoggedInUser={getLoggedInUser}/>}/>
+          <Route path="/events" element={<EventList />} />
+          <Route path="/events/create" element={<PostEvent getLoggedInUser={getLoggedInUser} />} />
         </Route>
 
         <Route path="/login" element={<Login setAuthUser={setAuthUser} />} />
@@ -47,5 +39,5 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser, getLoggedInUser
       </Routes>
     </>
   );
-  
+
 };
