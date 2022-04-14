@@ -12,8 +12,8 @@ export const Nutshell = () => {
     }
 
     const getLoggedInUser = () => {
-      const thisUser = sessionStorage.getItem("nutshell_user")
-      console.log(thisUser)
+      const thisUser = parseInt(sessionStorage.getItem("nutshell_user"))
+      return thisUser;
     }
     
     const clearUser = () => {
