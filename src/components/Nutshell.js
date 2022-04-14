@@ -10,6 +10,11 @@ export const Nutshell = () => {
         sessionStorage.setItem("nutshell_user", JSON.stringify(user))
         setIsAuthenticated(sessionStorage.getItem("nutshell_user") !== null)
     }
+
+    const getLoggedInUser = () => {
+      const thisUser = sessionStorage.getItem("nutshell_user")
+      console.log(thisUser)
+    }
     
     const clearUser = () => {
         sessionStorage.clear();
@@ -21,6 +26,7 @@ return (
   <NavBar clearUser={clearUser} isAuthenticated={isAuthenticated}/>
   <ApplicationViews setAuthUser={setAuthUser}
                 isAuthenticated={isAuthenticated}
-                setIsAuthenticated={setIsAuthenticated}/>
+                setIsAuthenticated={setIsAuthenticated}
+                getLoggedInUser={getLoggedInUser}/>
   </>
 )}
