@@ -1,6 +1,7 @@
 import react, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import {addArticles} from "../modules/ArticleManager"
+import "./ArticleForm.css"
 
 export const CreateArticle = ({getLoggedInUser}) =>{
 
