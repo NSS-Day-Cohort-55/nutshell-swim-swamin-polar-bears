@@ -1,5 +1,10 @@
 export const remoteURL = "http://localhost:8088"
 
+export const getAllTasks = () => {
+    return fetch(`${remoteURL}/tasks`)
+    .then(result => result.json())
+}
+
 export const getTaskById = (taskId) => {
     return fetch(`${remoteURL}/tasks?userId=${taskId}&_expand=user`)
     .then(parseResponse => parseResponse.json())
