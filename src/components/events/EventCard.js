@@ -2,7 +2,9 @@ import React from "react"
 import "./EventCard.css"
 import { Link } from "react-router-dom"
 
-export const EventCard = ({ eventObj, handleDeleteEvent }) => {
+export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser }) => {
+
+    const user = getLoggedInUser()
 
     const formatDate =(date) => {
 		const year = date.split("-")[0]
@@ -20,7 +22,8 @@ export const EventCard = ({ eventObj, handleDeleteEvent }) => {
                 <p>{formatDate(eventObj.date)}</p>
                 <p>{eventObj.location}</p>
                 <p>{eventObj.description}</p>
-                <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>
+                {user === eventObj.userId? <Link to={`/events/${eventObj.id}/edit`}><button type="button">Edit</button></Link>: ""}
+                {user === eventObj.userId? <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>: ""}
             </div>
         </div>
     )

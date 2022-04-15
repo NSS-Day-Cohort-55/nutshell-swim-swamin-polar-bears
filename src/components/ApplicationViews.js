@@ -8,6 +8,7 @@ import { TaskDetail } from "./Tasks/TaskDetail";
 import { UserList } from "./users/UserList";
 import { EventList } from "./events/EventList";
 import { PostEvent } from "./events/PostEvent";
+import { EventEditForm } from "./events/EventEditForm";
 import { ArticleList } from "./articles/ArticleList";
 import { CreateArticle } from "./articles/CreateArticle";
 import { MessageList } from "./messages/MessageList";
@@ -53,19 +54,20 @@ export const ApplicationViews = ({
           />
           <Route exact path="/tasks" element={<TaskList />} />
           <Route exact path="/tasks/:taskId" element={<TaskDetail />} />
-          {/* <Route exact path="/tasks/create" element={<TaskCreate />} /> */}
-
-          <Route path="/events" element={<EventList />} />
-          <Route
-            path="/events/create"
-            element={<PostEvent getLoggedInUser={getLoggedInUser} />}
-          />
           <Route path="/tasks" element={""} />
+
           <Route
             path="/users"
             element={<UserList getLoggedInUser={getLoggedInUser} />}
           />
-          <Route path="/events" element={<EventList />} />
+          <Route
+            path="/events"
+            element={<EventList getLoggedInUser={getLoggedInUser} />}
+          />
+          <Route
+            path="/events/:eventId/edit"
+            element={<EventEditForm getLoggedInUser={getLoggedInUser} />}
+          />
           <Route
             path="/events/create"
             element={<PostEvent getLoggedInUser={getLoggedInUser} />}
