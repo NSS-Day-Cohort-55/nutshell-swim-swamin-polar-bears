@@ -7,6 +7,8 @@ export const Messenger = () => {
     currentUserId: "",
   });
 
+  useEffect(() => {}, []);
+
   return (
     <>
       <p>A Message</p>

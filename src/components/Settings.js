@@ -1,3 +1,3 @@
 export const settings = {
-    weatherKey : "ABAgkJaTAmjPKgjNNfwGFWey8bTm4PbTFyXFPocX"
+    weatherKey : "111b9dbafb53b561b5efd23e53016a89"
 }
