@@ -5,3 +5,10 @@
 nav {
     background-color: black;
 }
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #dce0e5;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}

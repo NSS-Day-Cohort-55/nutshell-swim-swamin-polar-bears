@@ -29,7 +29,7 @@ export const NavBar = ({clearUser}) => {
           <Link className="nav-link" to="/users">Find Friends</Link>
         </li>
         <li className="nav-item">
-          <button type="button" className="logout_button" onClick={clearUser}>Logout</button>
+          <button type="button" className="nav-link" onClick={clearUser}>Logout</button>
         </li>
       </ul>
     </nav>
