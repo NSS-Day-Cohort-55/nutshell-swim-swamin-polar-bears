@@ -1,5 +1,5 @@
 import react, {useState, useEffect} from "react";
-import { settings } from "../Settings";
+import { settings } from "../../Settings";
 import { getLocalWeather } from "../modules/WeatherManager";
 import "./weather.css"
 
