@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import {
   deleteMessage,
   getMyMessages,
+  getAllMessages,
+  addMessage,
 } from "../modules/MessageManager";
 import { MessageCard } from "./MessageCard";
 
@@ -12,7 +14,7 @@ export const MessageList = ({ getLoggedInUser }) => {
   //temporarily hard-coding logged in user. will need to fix this later
 
   const getMessages = () => {
-    return getMyMessages(getLoggedInUser()).then((messagesFromAPI) => {
+    return getAllMessages(getLoggedInUser()).then((messagesFromAPI) => {
       setMessages(messagesFromAPI);
     });
   };

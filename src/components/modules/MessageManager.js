@@ -2,9 +2,9 @@ import react from "react";
 
 const remoteURL = "http://localhost:8088";
 
-export const getAllUsers = () => {
+export const getAllMessages = () => {
   // If your json-server URL is different, please change it below!
-  return fetch(`${remoteURL}/users`).then((res) => res.json());
+  return fetch(`${remoteURL}/messages`).then((res) => res.json());
 };
 
 export const getMyMessages = (id) => {
