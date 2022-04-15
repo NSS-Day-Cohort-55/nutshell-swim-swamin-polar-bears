@@ -15,3 +15,7 @@ const getGeoCode = (city, state, apikey) =>{
             return things
         })
 }
+
+export const getEventWeather = (index) =>{
+
+}

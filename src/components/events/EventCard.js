@@ -2,9 +2,11 @@ import React from "react"
 import "./EventCard.css"
 import { Link } from "react-router-dom"
 
-export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser }) => {
+export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, genForecast }) => {
 
     const user = getLoggedInUser()
+
+    const forecast = genForecast(eventObj)
 
     const formatDate =(date) => {
 		const year = date.split("-")[0]
@@ -21,6 +23,7 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser }) => {
                 <h5><span className="card-eventPoster">Posted By: {eventObj.user?.name}</span></h5>
                 <p>{formatDate(eventObj.date)}</p>
                 <p>{eventObj.location}</p>
+                <p>Forecast: {console.log(forecast)} </p>
                 <p>{eventObj.description}</p>
                 {user === eventObj.userId? <Link to={`/events/${eventObj.id}/edit`}><button type="button">Edit</button></Link>: ""}
                 {user === eventObj.userId? <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>: ""}
