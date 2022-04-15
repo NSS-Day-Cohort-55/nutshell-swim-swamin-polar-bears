@@ -5,7 +5,7 @@ import { deleteEvent, getAllEvents,  } from '../modules/EventManager';
 import { useNavigate } from 'react-router-dom';
 
 
-export const EventList = () => {
+export const EventList = ({getLoggedInUser}) => {
     const [events, setEvents] = useState([])
 
     const navigate = useNavigate();
@@ -15,7 +15,6 @@ export const EventList = () => {
             setEvents(eventsFromAPI)
         })
     }
-
     const handleDeleteEvent = id => {
         deleteEvent(id)
         .then(() => getAllEvents().then(setEvents))
@@ -24,6 +23,7 @@ export const EventList = () => {
     useEffect(() => {
         getEvents();
     }, []);
+    
 
 
     return (
@@ -31,10 +31,10 @@ export const EventList = () => {
             <button type='button'
                 className='btn'
                 onClick={() => {navigate("/events/create")}}>
-                Bust a nut
+                Add An Event!
             </button>
             <div className='cards-container'>
-                {events.map(event=> <EventCard eventObj={event} key={event.id} handleDeleteEvent={handleDeleteEvent}/>)}
+                {events.map(event=> <EventCard eventObj={event} key={event.id} handleDeleteEvent={handleDeleteEvent} getLoggedInUser={getLoggedInUser}/>)}
             </div>
         </>
     )

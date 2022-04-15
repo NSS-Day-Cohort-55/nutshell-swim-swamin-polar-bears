@@ -7,6 +7,11 @@ export const getAllUsers = () => {
   return fetch(`${remoteURL}/users`).then((res) => res.json());
 };
 
+export const getUserById = (userId) => {
+  return fetch(`${remoteURL}/users/${userId}`)
+  .then((res) => res.json());
+}
+
 export const getMyFriends = (id) => {
   return fetch(`${remoteURL}/friends?currentUserId=${id}&_expand=user`).then(
     (res) => res.json()

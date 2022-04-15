@@ -24,3 +24,13 @@ export const deleteEvent = (eventId) => {
         method: "DELETE"
     }).then(result => result.json())
 }
+
+export const updateEvent = (eventObj) => {
+    return fetch(`${remoteURL}/events/${eventObj.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(eventObj)
+    }).then(response => response.json())
+}
