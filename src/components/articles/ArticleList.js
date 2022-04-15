@@ -2,6 +2,7 @@ import react, {useState, useEffect} from "react";
 import { ArticleCard } from "./ArticleCard";
 import { useNavigate } from "react-router-dom";
 import { getArticles, deleteArticle} from "../modules/ArticleManager"
+import { Weather } from "../weather/Weather";
 
 export const ArticleList = ({getLoggedInUser}) =>{
 
@@ -33,9 +34,13 @@ export const ArticleList = ({getLoggedInUser}) =>{
             <section className="articles_content">
                 <button type="button" onClick={()=> {navigate("/create/")}}>Add new article</button>
             </section>
-            <div className="articles_card_container">
+            <div>
+            <Weather/>
+            <section className="articles_card_container">
                 {articles.map(article => <ArticleCard key={article.id} article={article} handleDeleteArticle={handleDeleteArticle} getLoggedInUser={getLoggedInUser} />)}
+            </section>
             </div>
+
 
         </>
 
