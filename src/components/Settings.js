@@ -1,3 +1,3 @@
 export const settings = {
-    weatherKey : ""
+    weatherKey : "ABAgkJaTAmjPKgjNNfwGFWey8bTm4PbTFyXFPocX"
 }
