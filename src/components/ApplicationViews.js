@@ -52,9 +52,15 @@ export const ApplicationViews = ({
             path="/messages/new"
             element={<Messenger getLoggedInUser={getLoggedInUser} />}
           />
-          <Route exact path="/tasks" element={<TaskList />} />
-          <Route exact path="/tasks/:taskId" element={<TaskDetail />} />
-          <Route path="/tasks" element={""} />
+
+          <Route exact path="/tasks"
+            element={<TaskList />} />
+
+          <Route exact path="/tasks/:taskId"
+            element={<TaskDetail />} />
+            
+          <Route path="/tasks"
+            element={""} />
 
           <Route
             path="/users"
