@@ -11,6 +11,7 @@ import { PostEvent } from "./events/PostEvent";
 import { ArticleList } from "./articles/ArticleList";
 import { CreateArticle } from "./articles/CreateArticle";
 import { MessageList } from "./messages/MessageList";
+import { Messenger } from "./messages/Messenger";
 import { ArticleEditForm } from "./articles/ArticleEditForm";
 
 export const ApplicationViews = ({
@@ -45,6 +46,10 @@ export const ApplicationViews = ({
           <Route
             path="/messages"
             element={<MessageList getLoggedInUser={getLoggedInUser} />}
+          />
+          <Route
+            path="/messages/new"
+            element={<Messenger getLoggedInUser={getLoggedInUser} />}
           />
           <Route exact path="/tasks" element={<TaskList />} />
           <Route exact path="/tasks/:taskId" element={<TaskDetail />} />

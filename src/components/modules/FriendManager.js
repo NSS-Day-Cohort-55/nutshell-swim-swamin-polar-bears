@@ -8,8 +8,8 @@ export const getAllUsers = () => {
 };
 
 export const getUserById = (userId) => {
-  return fetch(`${remoteURL}/users?userId=${userId}`)
-  .then((res) => {res.json()});
+  return fetch(`${remoteURL}/users/${userId}`)
+  .then((res) => res.json());
 }
 
 export const getMyFriends = (id) => {
