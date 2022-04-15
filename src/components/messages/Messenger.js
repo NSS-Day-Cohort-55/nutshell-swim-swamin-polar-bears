@@ -16,9 +16,6 @@ export const Messenger = ({ getLoggedInUser }) => {
 
     let selectedTarget = event.target.value;
 
-    // if (event.target.id.includes("Id")) {
-    //   selectedTarget = parseInt(selectedTarget);
-    // }
     newMessage[event.target.id] = selectedTarget;
     setMessage(newMessage);
   };
