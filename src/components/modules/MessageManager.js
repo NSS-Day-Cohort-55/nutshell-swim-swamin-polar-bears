@@ -4,7 +4,7 @@ const remoteURL = "http://localhost:8088";
 
 export const getAllMessages = () => {
   // If your json-server URL is different, please change it below!
-  return fetch(`${remoteURL}/messages`).then((res) => res.json());
+  return fetch(`${remoteURL}/messages?_expand=user&_expand=currentUser`).then((res) => res.json());
 };
 
 export const getMyMessages = (id) => {
@@ -14,7 +14,7 @@ export const getMyMessages = (id) => {
 };
 
 export const addMessage = (newMessage) => {
-  return fetch(`${remoteURL}/messages`, {
+  return fetch(`${remoteURL}/messages?`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

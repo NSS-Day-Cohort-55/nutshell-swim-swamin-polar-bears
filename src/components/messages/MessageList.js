@@ -14,7 +14,7 @@ export const MessageList = ({ getLoggedInUser }) => {
   //temporarily hard-coding logged in user. will need to fix this later
 
   const getMessages = () => {
-    return getAllMessages(getLoggedInUser()).then((messagesFromAPI) => {
+    return getAllMessages().then((messagesFromAPI) => {
       setMessages(messagesFromAPI);
     });
   };
