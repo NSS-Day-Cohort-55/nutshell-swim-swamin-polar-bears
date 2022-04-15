@@ -41,9 +41,7 @@ export const ApplicationViews = ({
           <Route exact path="/tasks/:taskId" element={<TaskDetail />} />
           {/* <Route exact path="/tasks/create" element={<TaskCreate />} /> */}
 
-          <Route path="/events" element={<EventList />} />
-          <Route path="/events/create" element={<PostEvent getLoggedInUser={getLoggedInUser} />} />
-          <Route path="/tasks" element={""} />
+          
           <Route
             path="/users"
             element={<UserList getLoggedInUser={getLoggedInUser} />}
