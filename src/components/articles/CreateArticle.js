@@ -26,10 +26,6 @@ export const CreateArticle = ({getLoggedInUser}) =>{
         setArticles(newArticle)
     }
 
-    useEffect(()=>{
-
-    },[])
-
     const saveArticle = (event) =>{
         event.preventDefault()
         addArticles(articles)
