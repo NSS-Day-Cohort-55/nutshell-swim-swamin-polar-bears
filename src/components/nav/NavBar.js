@@ -1,10 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./NavBar.css"
 
-export const NavBar = (props) => {
+export const NavBar = ({clearUser}) => {
   return (
-    <nav className="navbar bg-dark text-white flex-md-nowrap p-0 shadow">
+    <nav className="navbar text-white flex-md-nowrap p-0 shadow">
+
+      <img className="logo" src="../images/Swimswamminpolarbears(3).png" alt="logo"/>
 
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
@@ -24,6 +27,9 @@ export const NavBar = (props) => {
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/users">Find Friends</Link>
+        </li>
+        <li className="nav-item">
+          <button type="button" className="logout_button" onClick={clearUser}>Logout</button>
         </li>
       </ul>
     </nav>
