@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-// import Particles from "react-tsparticles";
-// import { loadFull} from "tsparticles"
+import Particles from "react-tsparticles";
+import { loadFull} from "tsparticles"
 
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
