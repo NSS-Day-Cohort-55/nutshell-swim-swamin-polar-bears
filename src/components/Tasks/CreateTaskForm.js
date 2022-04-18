@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addTask } from '../modules/TaskManger';
+import "./TaskForm.css"
 
 export const CreateTask= ({getLoggedInUser}) =>{
 
@@ -38,6 +39,7 @@ export const CreateTask= ({getLoggedInUser}) =>{
 
 
     return (
+        <div className=''
         <form>
             <h2>New Task</h2>
             <fieldset>

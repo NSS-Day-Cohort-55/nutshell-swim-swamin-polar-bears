@@ -18,7 +18,7 @@ export const ArticleList = ({getLoggedInUser}) =>{
             })
     }
 
-    const handleDeleteArticle = (articleObj) =>{
+   const handleDeleteArticle = (articleObj) =>{
         deleteArticle(articleObj)
             .then( () => getAllArticles())
     }

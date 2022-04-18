@@ -80,9 +80,9 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, foreca
                 <h3><span className="card-eventName">{eventObj.name}</span></h3>
                 <h5><span className="card-eventPoster">Posted By: {eventObj.user?.name}</span></h5>
                 <p>{formatDate(eventObj.date)}</p>
-                <p>{eventObj.location}</p>
-                <p>Forecast: {genForecast(eventObj, forecastObj).description} </p>
-                <p>{eventObj.description}</p>
+                <p><b>Location:</b> {eventObj.location}</p>
+                <p><b>Forecast:</b> {genForecast(eventObj, forecastObj).description} </p>
+                <p><b>Description:</b> {eventObj.description}</p>
                 {user === eventObj.userId? <Link to={`/events/${eventObj.id}/edit`}><button type="button">Edit</button></Link>: ""}
                 {user === eventObj.userId? <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>: ""}
             </div>
