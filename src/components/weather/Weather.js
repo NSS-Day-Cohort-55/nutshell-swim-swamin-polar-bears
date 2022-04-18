@@ -1,5 +1,5 @@
 import react, {useState, useEffect} from "react";
-import { settings } from "../Settings";
+import { settings } from "../../Settings";
 import { getLocalWeather } from "../modules/WeatherManager";
 import "./weather.css"
 
@@ -14,7 +14,6 @@ export const  Weather = () =>{
                 feels_like: newWeather.current.feels_like,
                 description: newWeather.current.weather[0].description
             }
-            console.log(weather)
             updateWeather(weather)
         })
     },[])

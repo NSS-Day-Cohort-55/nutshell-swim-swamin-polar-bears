@@ -1,4 +1,4 @@
-import { settings } from "../Settings"
+import { settings } from "../../Settings"
 
 
 
@@ -14,4 +14,8 @@ const getGeoCode = (city, state, apikey) =>{
         .then(things => {
             return things
         })
+}
+
+export const getEventWeather = (index) =>{
+
 }

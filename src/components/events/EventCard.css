@@ -4,7 +4,9 @@
   align-content: center;
   align-items: center;
 }
-
+.card {
+  width: 50%;
+}
 body {
   background: linear-gradient(
     0deg,
@@ -14,4 +16,9 @@ body {
   );
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+.btn {
+  color: #008037;
+  width: 100%;
 }

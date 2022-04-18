@@ -1,6 +1,10 @@
 .logo {
     height: 100px;
 }
+.logo2 {
+    height: 100px;
+    margin: 0;
+}
 
 nav {
     background-color: black;
@@ -11,4 +15,7 @@ nav {
     color: #dce0e5;
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.nav link :hover {
+    color: green;
 }
