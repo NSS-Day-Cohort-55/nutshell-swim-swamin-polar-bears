@@ -39,7 +39,7 @@ export const CreateTask= ({getLoggedInUser}) =>{
 
 
     return (
-        <div className=''
+        <div className=''>
         <form>
             <h2>New Task</h2>
             <fieldset>
@@ -57,6 +57,7 @@ export const CreateTask= ({getLoggedInUser}) =>{
             <button type="button" id="task_submit_btn" className="submit_btn" onClick={saveTask}>Submit</button>
 
         </form>
+        </div>
 
     )
 }

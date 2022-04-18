@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { addMessage } from "../modules/MessageManager";
-import { getAllUsers } from "../modules/FriendManager";
+import { getAllUsers, getUserById } from "../modules/FriendManager";
 
-export const Messenger = ({ getLoggedInUser }) => {
+export const PrivateMessenger = ({ getLoggedInUser }) => {
   const today = new Date();
-  const fullDate = today.toISOString().split("T")[0];
 
-  const [message, setMessage] = useState({
-    body: "",
-    userId: 0,
-    currentUserId: getLoggedInUser(),
-    timeStamp: today
-  });
+  const user = getLoggedInUser();
 
-  const [users, setUsers] = useState([]);
+  const { userId } = useParams();
+
+  const [message, setMessage] = useState({});
+
+  const [recipient, setRecipient] = useState({});
 
   const navigate = useNavigate();
 
   const controlInput = (event) => {
-    const newMessage = { ...message };
+    const thisMessage = {
+      body: "",
+      currentUserId: user,
+      userId: parseInt(userId),
+      timestamp: today,
+    };
 
     let selectedTarget = event.target.value;
 
-    newMessage[event.target.id] = selectedTarget;
-    setMessage(newMessage);
+    thisMessage[event.target.id] = selectedTarget;
+    setMessage(thisMessage);
   };
 
   const sendMessage = (event) => {
@@ -33,8 +36,8 @@ export const Messenger = ({ getLoggedInUser }) => {
   };
 
   useEffect(() => {
-    getAllUsers().then((allUsers) => {
-      setUsers(allUsers);
+    getUserById(userId).then((r) => {
+      setRecipient(r);
     });
   }, []);
 
@@ -44,20 +47,20 @@ export const Messenger = ({ getLoggedInUser }) => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="userId">Recipient: </label>
-          <select
-            value={message.userId}
+          <input
+            value={recipient.name}
             name="recipient"
             id="userId"
-            onChange={controlInput}
+            disabled={true}
             className="controlled_form"
-          >
-            <option value="0">Select a Recipient</option>
-            {users.map((u) => (
-              <option key={u.id} value={u.id}>
-                {u.name}
-              </option>
-            ))}
-          </select>
+          ></input>
+          <input
+            type="hidden"
+            value={recipient.userId}
+            name="recipient"
+            id="userId"
+            className="controlled_form"
+          ></input>
         </div>
       </fieldset>
       <fieldset>
