@@ -3,19 +3,26 @@ import { Link } from "react-router-dom";
 import { getUserById } from "../modules/FriendManager";
 
 export const MessageCard = ({ message, handleDeleteMessage }) => {
-
   const [currentUser, setCurrentUser] = useState({
     name: "",
     email: "",
   });
 
   useEffect(() => {
-    console.log(message.currentUserId)
+    console.log(message.currentUserId);
     getUserById(parseInt(message.currentUserId)).then((thisUser) => {
       console.log(thisUser);
       setCurrentUser(thisUser);
     });
   }, []);
+
+  const checkPublic = () => {
+    if (message.user?.name) {
+      return message.user?.name;
+    } else {
+      return "Public";
+    }
+  };
 
   return (
     <>
@@ -25,7 +32,7 @@ export const MessageCard = ({ message, handleDeleteMessage }) => {
             From: <span className="card-messagename">{currentUser.name}</span>
           </h3>
           <h3>
-            To: <span className="card-messagename">{message.user?.name}</span>
+            To: <span className="card-messagename">{checkPublic()}</span>
           </h3>
           <p>{message.body}</p>
           <button type="button" onClick={() => handleDeleteMessage(message.id)}>

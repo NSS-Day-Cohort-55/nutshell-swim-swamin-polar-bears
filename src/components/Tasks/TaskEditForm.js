@@ -50,8 +50,8 @@ export const TaskEditForm = ({ getLoggedInUser }) => {
                 <input type="text" id="description" onChange={handleChanges} required autoFocus className="controlled_form" placeholder="Task description" value={task.description} />
             </fieldset>
             <fieldset>
-                <label htmlFor="completiondate"></label>
-                <input type="date" id="completiondate" onChange={handleChanges} required autoFocus className="controlled_form" value={task.completiondate} />
+                <label htmlFor="completionDate"></label>
+                <input type="date" id="completionDate" onChange={handleChanges} required autoFocus className="controlled_form" value={task.completionDate} />
             </fieldset>
             <button type="button" id="task_edit_submit_btn" className="submit_btn" onClick={handleUpdateTask}>Submit</button>
             <button type="button" id="task_edit_Cancel_btn" className="submit_btn" onClick={() => navigate("/tasks")}>Cancel</button>

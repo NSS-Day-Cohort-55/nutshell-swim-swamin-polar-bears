@@ -32,11 +32,11 @@ export const ArticleList = ({getLoggedInUser}) =>{
     return (
         <>
             <section className="articles_content">
-                <button type="button" onClick={()=> {navigate("/create/")}}>Add new article</button>
             </section>
-            <div>
+            <div className="articles_flex">
             <Weather/>
             <section className="articles_card_container">
+                <button type="button" className="btn_article" onClick={()=> {navigate("/create/")}}>Add new article</button>
                 {articles.map(article => <ArticleCard key={article.id} article={article} handleDeleteArticle={handleDeleteArticle} getLoggedInUser={getLoggedInUser} />)}
             </section>
             </div>
