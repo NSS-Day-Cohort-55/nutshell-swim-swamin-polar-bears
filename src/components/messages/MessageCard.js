@@ -4,7 +4,7 @@ import { getUserById } from "../modules/FriendManager";
 import { addFriend } from "../modules/FriendManager";
 // import { MessageModal } from "./MessageModal";
 
-export const MessageCard = ({ message, handleDeleteMessage }) => {
+export const MessageCard = ({ message, handleDeleteMessage, getLoggedInUser }) => {
   const [currentUser, setCurrentUser] = useState({
     name: "",
     email: "",
@@ -27,21 +27,20 @@ export const MessageCard = ({ message, handleDeleteMessage }) => {
     }
   };
 
+  const handleAddFriend = (userObj) =>{
+    const newFriend = {
+      name: userObj.name,
+      userId: userObj.id,
+      currentUserId: getLoggedInUser()
+    }
+    newFriend.userId !== newFriend.currentUserId ? addFriend(newFriend).then(() => updateClick(false)) : window.alert("Cannot add friend. You have tried to add yourself or an existing friend.")
+    
+}
+
   const MessageModal = (messageObj) =>{
 
-    
-
-    const handleAddFriend = (userObj) =>{
-        window.alert(userObj.name)
-        addFriend(userObj)
-    }
-    
-
-
-    return (
-        
-        <>Add {messageObj.name} to friends? <button type="button" onClick={handleAddFriend}>Yes</button><button>No</button></>
-
+    return (  
+        <>Add {messageObj.name} to friends? <button type="button" onClick={() => handleAddFriend(messageObj)}>Yes</button><button type="button" onClick={()=>updateClick(false)}>No</button></>
     )
 }
 
@@ -50,7 +49,7 @@ export const MessageCard = ({ message, handleDeleteMessage }) => {
       <div className="card">
         <div className="card-content">
           <h3>
-            From: <span className="card-messagename" onClick={() => click? updateClick(false) : updateClick(true)}>{click? MessageModal(currentUser) : currentUser.name}</span>
+            From: <span className="card-messagename" onClick={() => updateClick(true)}>{click? MessageModal(currentUser) : currentUser.name}</span>
           </h3>
           <h3>
             To: <span className="card-messagename">{checkPublic()}</span>
