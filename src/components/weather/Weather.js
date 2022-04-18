@@ -14,7 +14,6 @@ export const  Weather = () =>{
                 feels_like: newWeather.current.feels_like,
                 description: newWeather.current.weather[0].description
             }
-            console.log(weather)
             updateWeather(weather)
         })
     },[])
