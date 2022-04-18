@@ -14,6 +14,9 @@ import { CreateArticle } from "./articles/CreateArticle";
 import { MessageList } from "./messages/MessageList";
 import { Messenger } from "./messages/Messenger";
 import { ArticleEditForm } from "./articles/ArticleEditForm";
+import { CreateTask } from "./Tasks/CreateTaskForm"; 
+import { TaskEditForm } from "./Tasks/TaskEditForm";
+
 
 export const ApplicationViews = ({
   isAuthenticated,
@@ -52,9 +55,19 @@ export const ApplicationViews = ({
             path="/messages/new"
             element={<Messenger getLoggedInUser={getLoggedInUser} />}
           />
-          <Route exact path="/tasks" element={<TaskList />} />
-          <Route exact path="/tasks/:taskId" element={<TaskDetail />} />
-          <Route path="/tasks" element={""} />
+
+          <Route exact path="/tasks"
+            element={<TaskList />} />
+
+          <Route exact path="/tasks/:taskId"
+            element={<TaskDetail />} />
+            
+          <Route path="/tasks/create"
+            element={<CreateTask getLoggedInUser={getLoggedInUser} />} />
+          
+          
+          <Route path="/tasks/:taskId/edit"
+            element={<TaskEditForm getLoggedInUser={getLoggedInUser} />} />
 
           <Route
             path="/users"
