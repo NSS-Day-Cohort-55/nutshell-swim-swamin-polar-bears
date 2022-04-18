@@ -57,7 +57,7 @@ export const ApplicationViews = ({
           />
 
           <Route exact path="/tasks"
-            element={<TaskList />} />
+            element={<TaskList /> } />
 
           <Route exact path="/tasks/:taskId"
             element={<TaskDetail />} />
