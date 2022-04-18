@@ -1,10 +1,17 @@
 .cards-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 body {
-    background: linear-gradient(0deg, rgba(236,238,238,1) 0%, rgba(128,129,129,1) 36%, rgba(1,1,1,1) 85%);
+  background: linear-gradient(
+    0deg,
+    rgba(236, 238, 238, 1) 0%,
+    rgba(128, 129, 129, 1) 36%,
+    rgba(1, 1, 1, 1) 85%
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
 }
