@@ -51,7 +51,7 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, foreca
                     temp: ""
                 }
                 return weather
-            }else if(forecastObj === undefined){
+            }else if(forecastObj.length === 0){
                 let weather = {
                     description: "Weather is not available at this time."
                 }
