@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate , Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   deleteMessage,
   getMyMessages,
@@ -11,7 +11,7 @@ import { MessageCard } from "./MessageCard";
 export const MessageList = ({ getLoggedInUser }) => {
   const [messages, setMessages] = useState([]);
 
-  //temporarily hard-coding logged in user. will need to fix this later
+  const thisUser = getLoggedInUser();
 
   const getMessages = () => {
     return getAllMessages().then((messagesFromAPI) => {
@@ -35,13 +35,22 @@ export const MessageList = ({ getLoggedInUser }) => {
         <button>New Message</button>
       </Link>
       <div className="container-cards">
-        {messages.map((message) => (
-          <MessageCard
-            key={message.id}
-            message={message}
-            handleDeleteMessage={handleDeleteMessage}
-          />
-        ))}
+        {messages.map((message) => {
+          if (
+            message.userId === thisUser ||
+            message.currentUserId === thisUser ||
+            message.userId === 0 ||
+            message.currentUserId === 0
+          ) {
+            return (
+              <MessageCard
+                key={message.id}
+                message={message}
+                handleDeleteMessage={handleDeleteMessage}
+              />
+            );
+          }
+        })}
       </div>
     </>
   );

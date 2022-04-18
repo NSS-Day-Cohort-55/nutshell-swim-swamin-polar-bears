@@ -9,9 +9,7 @@ export const MessageCard = ({ message, handleDeleteMessage }) => {
   });
 
   useEffect(() => {
-    console.log(message.currentUserId);
     getUserById(parseInt(message.currentUserId)).then((thisUser) => {
-      console.log(thisUser);
       setCurrentUser(thisUser);
     });
   }, []);
