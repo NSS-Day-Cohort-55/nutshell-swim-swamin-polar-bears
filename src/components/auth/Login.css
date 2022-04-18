@@ -2,3 +2,11 @@
   min-width: 15rem;
   min-height: 5rem;
 }
+
+.container--login {
+  margin-top: 3em;
+  color: white;
+}
+.container--login fieldset {
+  width: 500px
+}
