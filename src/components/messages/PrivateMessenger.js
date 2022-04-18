@@ -6,35 +6,28 @@ import { getAllUsers, getUserById } from "../modules/FriendManager";
 export const PrivateMessenger = ({ getLoggedInUser }) => {
   const today = new Date();
 
+  const user = getLoggedInUser();
+
   const { userId } = useParams();
 
-//   const [message, setMessage] = useState({
-//     body: "",
-//     userId: recipientId,
-//     currentUserId: getLoggedInUser(),
-//     timeStamp: today,
-//   });
+  const [message, setMessage] = useState({});
 
-    const newMessage = {
-        body: ,
-        userId: ,
-        currentUserId: getLoggedInUser(),
-        timeStamp: today
-    }
-
-  console.log(message)
-
-  const [users, setUsers] = useState([]);
+  const [recipient, setRecipient] = useState({});
 
   const navigate = useNavigate();
 
   const controlInput = (event) => {
-    const newMessage = { ...message };
+    const thisMessage = {
+      body: "",
+      currentUserId: user,
+      userId: parseInt(userId),
+      timestamp: today,
+    };
 
     let selectedTarget = event.target.value;
 
-    newMessage[event.target.id] = selectedTarget;
-    setMessage(newMessage);
+    thisMessage[event.target.id] = selectedTarget;
+    setMessage(thisMessage);
   };
 
   const sendMessage = (event) => {
@@ -43,8 +36,8 @@ export const PrivateMessenger = ({ getLoggedInUser }) => {
   };
 
   useEffect(() => {
-    getAllUsers().then((allUsers) => {
-      setUsers(allUsers);
+    getUserById(userId).then((r) => {
+      setRecipient(r);
     });
   }, []);
 
@@ -54,19 +47,20 @@ export const PrivateMessenger = ({ getLoggedInUser }) => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="userId">Recipient: </label>
-          <select
-            value={message.userId}
+          <input
+            value={recipient.name}
             name="recipient"
             id="userId"
-            onChange={controlInput}
+            disabled={true}
             className="controlled_form"
-          >
-            {users.map((u) => (
-              <option key={u.id} value={u.id}>
-                {u.name}
-              </option>
-            ))}
-          </select>
+          ></input>
+          <input
+            type="hidden"
+            value={recipient.userId}
+            name="recipient"
+            id="userId"
+            className="controlled_form"
+          ></input>
         </div>
       </fieldset>
       <fieldset>

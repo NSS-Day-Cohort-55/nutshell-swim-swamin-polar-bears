@@ -47,6 +47,7 @@ export const MessageList = ({ getLoggedInUser }) => {
                 key={message.id}
                 message={message}
                 handleDeleteMessage={handleDeleteMessage}
+                getLoggedInUser={getLoggedInUser}
               />
             );
           }
