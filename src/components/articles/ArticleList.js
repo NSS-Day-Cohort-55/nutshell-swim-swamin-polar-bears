@@ -3,6 +3,7 @@ import { ArticleCard } from "./ArticleCard";
 import { useNavigate } from "react-router-dom";
 import { getArticles, deleteArticle } from "../modules/ArticleManager";
 import { Weather } from "../weather/Weather";
+import "./ArticleCard.css"
 
 export const ArticleList = ({ getLoggedInUser }) => {
   const navigate = useNavigate();
@@ -29,18 +30,19 @@ export const ArticleList = ({ getLoggedInUser }) => {
   return (
     <>
       <section className="articles_content">
+      </section>
+      <div className="articles_flex">
+        <Weather />
+        <section className="articles_card_container">
         <button
           type="button"
+          className="btn_article"
           onClick={() => {
             navigate("/create/");
           }}
         >
           Add new article
         </button>
-      </section>
-      <div>
-        <Weather />
-        <section className="articles_card_container">
           {articles.map((article) => (
             <ArticleCard
               key={article.id}
