@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-import { FriendList } from "./friends/FriendList";
+import { FriendList } from "./Friends/FriendList";
 import { TaskList } from "./Tasks/TaskList";
 import { TaskDetail } from "./Tasks/TaskDetail";
 import { UserList } from "./users/UserList";
