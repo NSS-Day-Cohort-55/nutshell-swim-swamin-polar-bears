@@ -1,0 +1,22 @@
+.new_article{ 
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 2em;
+}
+
+.label {
+    display: flex;
+    justify-items: flex-start;
+}
+.controlled_form {
+    display: flex;
+    justify-items: flex-end;
+}
+#article_submit_btn{
+    width: 100%;
+    margin-top: 1em;
+    background-color: #008037;
+    border-radius: 5px;
+    color: white;
+}

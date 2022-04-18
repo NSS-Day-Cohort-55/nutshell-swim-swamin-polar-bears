@@ -1,11 +1,12 @@
 .article_card {
     background-color: white;
     margin-top: 1em;
-    border-radius: 10px;
+    border-radius: 11px;
     /* padding-left: .5em; */
     display: flex;
 }
 .articles_flex{
+    margin-top: 2em;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -20,6 +21,7 @@ margin-left: 20%;
     background-color: #007a35;
     color: white;
     border-radius: 8px;
+    border: solid 2px #007a35;
 }
 
 .btn_container{
@@ -49,14 +51,19 @@ margin-left: 20%;
     display: flex;
     align-content: center;
     align-items: center;
+    color: white;
     background-color: #007a35;
-    border-radius: 10px 0px 0px 10px
+    border-radius: 10px 0px 0px 10px;
+    padding-left: .5em;
 }
 
 #delete_button{
-    height: 50%;
+    /* height: 50%; */
     border-radius: 0px 10px 0px 0px;
     flex: 5;
+    padding: 0;
+    background-color: #a45454;
+    color: white;
 }
 
 #edit_button{

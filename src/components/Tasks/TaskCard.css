@@ -2,3 +2,8 @@
     margin-top: 1em;
     background-color: white;
 }
+.task_btn {
+    color: white;
+    background-color: #008037;
+    width: 100%;
+}
