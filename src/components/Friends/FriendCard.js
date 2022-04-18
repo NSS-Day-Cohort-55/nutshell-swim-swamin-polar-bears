@@ -10,7 +10,7 @@ export const FriendCard = ({ friend, handleDeleteFriend , getLoggedInUser }) => 
             Name: <span className="card-friendname">{friend.user?.name}</span>
           </h3>
           <p>Email: {friend.user?.email}</p>
-          <Link to={`/messages/new`}>
+          <Link to={`/messages/new/${friend.user?.id}`}>
             <button>Message</button>
           </Link>
           <button type="button" onClick={() => handleDeleteFriend(friend.id)}>

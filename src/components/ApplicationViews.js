@@ -12,11 +12,11 @@ import { EventEditForm } from "./events/EventEditForm";
 import { ArticleList } from "./articles/ArticleList";
 import { CreateArticle } from "./articles/CreateArticle";
 import { MessageList } from "./messages/MessageList";
-import { Messenger } from "./messages/Messenger";
+import { PublicMessenger } from "./messages/PublicMessenger";
+import { PrivateMessenger } from "./messages/PrivateMessenger";
 import { ArticleEditForm } from "./articles/ArticleEditForm";
-import { CreateTask } from "./Tasks/CreateTaskForm"; 
+import { CreateTask } from "./Tasks/CreateTaskForm";
 import { TaskEditForm } from "./Tasks/TaskEditForm";
-
 
 export const ApplicationViews = ({
   isAuthenticated,
@@ -53,21 +53,28 @@ export const ApplicationViews = ({
           />
           <Route
             path="/messages/new"
-            element={<Messenger getLoggedInUser={getLoggedInUser} />}
+            element={<PublicMessenger getLoggedInUser={getLoggedInUser} />}
+          />
+          <Route
+            path="/messages/new/:userId"
+            element={
+              <PrivateMessenger getLoggedInUser={getLoggedInUser} />
+            }
           />
 
-          <Route exact path="/tasks"
-            element={<TaskList /> } />
+          <Route exact path="/tasks" element={<TaskList />} />
 
-          <Route exact path="/tasks/:taskId"
-            element={<TaskDetail />} />
-            
-          <Route path="/tasks/create"
-            element={<CreateTask getLoggedInUser={getLoggedInUser} />} />
-          
-          
-          <Route path="/tasks/:taskId/edit"
-            element={<TaskEditForm getLoggedInUser={getLoggedInUser} />} />
+          <Route exact path="/tasks/:taskId" element={<TaskDetail />} />
+
+          <Route
+            path="/tasks/create"
+            element={<CreateTask getLoggedInUser={getLoggedInUser} />}
+          />
+
+          <Route
+            path="/tasks/:taskId/edit"
+            element={<TaskEditForm getLoggedInUser={getLoggedInUser} />}
+          />
 
           <Route
             path="/users"

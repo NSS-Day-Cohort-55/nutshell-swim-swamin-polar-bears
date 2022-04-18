@@ -12,9 +12,7 @@ export const MessageCard = ({ message, handleDeleteMessage, getLoggedInUser }) =
   const [click, updateClick] = useState(false)
 
   useEffect(() => {
-    console.log(message.currentUserId);
     getUserById(parseInt(message.currentUserId)).then((thisUser) => {
-      console.log(thisUser);
       setCurrentUser(thisUser);
     });
   }, []);
