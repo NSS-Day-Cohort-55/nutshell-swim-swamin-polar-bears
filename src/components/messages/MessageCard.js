@@ -40,7 +40,7 @@ export const MessageCard = ({ message, handleDeleteMessage, getLoggedInUser }) =
   const MessageModal = (messageObj) =>{
 
     return (  
-        <>Add {messageObj.name} to friends? <button type="button" onClick={() => handleAddFriend(messageObj)}>Yes</button><button type="button" onClick={()=>updateClick(false)}>No</button></>
+        <>Add {messageObj.name} to friends? <button type="button" onClick={() => handleAddFriend(messageObj)}>Yes</button><button>No</button></>
     )
 }
 
@@ -49,15 +49,13 @@ export const MessageCard = ({ message, handleDeleteMessage, getLoggedInUser }) =
       <div className="card">
         <div className="card-content">
           <h3>
-            From: <span className="card-messagename" onClick={() => updateClick(true)}>{click? MessageModal(currentUser) : currentUser.name}</span>
+             <span className="card-messagename" onClick={() => click? updateClick(false) : updateClick(true)}>{click? MessageModal(currentUser) :`From: ${currentUser.name}`}</span>
           </h3>
           <h3>
             To: <span className="card-messagename">{checkPublic()}</span>
           </h3>
           <p>{message.body}</p>
-          <button type="button" onClick={() => handleDeleteMessage(message.id)}>
-            Delete Message
-          </button>
+          {message.currentUserId === getLoggedInUser()? <button type="button" onClick={() => handleDeleteMessage(message.id)}>Delete Message</button> : ""}
           
         </div>
       </div>
