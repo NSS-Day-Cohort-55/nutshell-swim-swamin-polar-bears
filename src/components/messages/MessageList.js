@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import {
   deleteMessage,
   getMyMessages,
@@ -31,6 +31,9 @@ export const MessageList = ({ getLoggedInUser }) => {
 
   return (
     <>
+      <Link to={`/messages/new`}>
+        <button>New Message</button>
+      </Link>
       <div className="container-cards">
         {messages.map((message) => (
           <MessageCard
