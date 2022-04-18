@@ -3,19 +3,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import { addMessage } from "../modules/MessageManager";
 import { getAllUsers, getUserById } from "../modules/FriendManager";
 
-export const Messenger = ({ getLoggedInUser }) => {
-  const today = new Date();
-
-  const { userId } = useParams();
+export const PublicMessenger = ({ getLoggedInUser }) => {
+  const now = new Date();
 
   const [message, setMessage] = useState({
     body: "",
-    // userId: recipientId,
+    userId: 0,
     currentUserId: getLoggedInUser(),
-    timeStamp: today,
+    timeStamp: now,
   });
 
-  console.log(message)
 
   const [users, setUsers] = useState([]);
 
@@ -46,20 +43,16 @@ export const Messenger = ({ getLoggedInUser }) => {
       <h2>New Message</h2>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="userId">Recipient: </label>
-          <select
+          <input
+            type='hidden'
             value={message.userId}
             name="recipient"
             id="userId"
             onChange={controlInput}
             className="controlled_form"
           >
-            {users.map((u) => (
-              <option key={u.id} value={u.id}>
-                {u.name}
-              </option>
-            ))}
-          </select>
+
+          </input>
         </div>
       </fieldset>
       <fieldset>

@@ -3,17 +3,24 @@ import { useNavigate, useParams } from "react-router-dom";
 import { addMessage } from "../modules/MessageManager";
 import { getAllUsers, getUserById } from "../modules/FriendManager";
 
-export const Messenger = ({ getLoggedInUser }) => {
+export const PrivateMessenger = ({ getLoggedInUser }) => {
   const today = new Date();
 
   const { userId } = useParams();
 
-  const [message, setMessage] = useState({
-    body: "",
-    // userId: recipientId,
-    currentUserId: getLoggedInUser(),
-    timeStamp: today,
-  });
+//   const [message, setMessage] = useState({
+//     body: "",
+//     userId: recipientId,
+//     currentUserId: getLoggedInUser(),
+//     timeStamp: today,
+//   });
+
+    const newMessage = {
+        body: ,
+        userId: ,
+        currentUserId: getLoggedInUser(),
+        timeStamp: today
+    }
 
   console.log(message)
 
