@@ -10,6 +10,7 @@ import { EventList } from "./events/EventList";
 import { PostEvent } from "./events/PostEvent";
 import { EventEditForm } from "./events/EventEditForm";
 import { ArticleList } from "./articles/ArticleList";
+import { SortArticlesByFriends } from "./articles/FriendsArticles";
 import { CreateArticle } from "./articles/CreateArticle";
 import { MessageList } from "./messages/MessageList";
 import { PublicMessenger } from "./messages/PublicMessenger";
@@ -43,6 +44,10 @@ export const ApplicationViews = ({
           <Route
             path="/:articleId/edit"
             element={<ArticleEditForm getLoggedInUser={getLoggedInUser} />}
+          />
+          <Route
+            path="/onlyfriends"
+            element={<SortArticlesByFriends getLoggedInUser={getLoggedInUser}/>}
           />
           <Route
             path="/friends"
