@@ -7,6 +7,11 @@ export const getAllUsers = () => {
   return fetch(`${remoteURL}/users`).then((res) => res.json());
 };
 
+export const findUser = (userName) =>{
+  return fetch(`${remoteURL}/users?q=${userName}`)
+    .then(response => response.json())
+}
+
 export const getUserById = (userId) => {
   return fetch(`${remoteURL}/users/${userId}`)
   .then((res) => res.json());
