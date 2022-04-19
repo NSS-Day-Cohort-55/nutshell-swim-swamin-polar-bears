@@ -13,7 +13,7 @@ export const UserList = ({ getLoggedInUser }) => {
     name: ""
   })
 
-  //temporarily hard-coding logged in user. will need to fix this later
+  const navigate = useNavigate()
 
   const getUsers = () => {
     return getAllUsers().then((usersFromAPI) => {
@@ -33,7 +33,8 @@ export const UserList = ({ getLoggedInUser }) => {
       currentUserId: getLoggedInUser(),
     };
     if (newFriend.userId !== newFriend.currentUserId) {
-      addFriend(newFriend).then(() => getAllUsers().then(setUsers));
+      addFriend(newFriend)
+      .then(() => navigate("/friends/"));
     } else {
       window.alert(
         "Cannot add friend. You have tried to add yourself or an existing friend."

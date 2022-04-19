@@ -41,26 +41,29 @@ export const ArticleEditForm = ({getLoggedInUser}) =>{
     return (
         <div className="new_article_display">
             <div className="new_article">
+            <div className="header_div">
+                        <h2>Edit Article</h2>
+                    </div>
                 <form>
-                    <h2>Edit Article</h2>
-                    <fieldset>
+
+                    <fieldset className="new_article_field">
                         <label htmlFor="article_name"className="label">Article Title</label>
                         <input type="text" id="title" onChange={handleChanges} required autoFocus className="controlled_form" placeholder="Article title"value={article.title} />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="new_article_field">
                     <label htmlFor="article_synopsis" className="label">Article Synopsis</label>
                         <input type="text" id="synopsis" onChange={handleChanges} required autoFocus className="controlled_form" placeholder="Article synopsis" value={article.synopsis} />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="new_article_field">
                     <label htmlFor="article_url" className="label">Article URL</label>
                         <input type="text" id="url" onChange={handleChanges} required autoFocus className="controlled_form" placeholder="Article url" value={article.url} />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="new_article_field">
                         <label htmlFor="timestamp" className="label"></label>
                         <input type="date" id="timestamp" onChange={handleChanges} required autoFocus className="controlled_form" value={article.timestamp} />
                     </fieldset>
                     <button type="button" id="article_edit_submit_btn" className="submit_btn" onClick={handleUpdateArticle}>Submit</button>
-                    <button type="button" id="article_edit_Cancel_btn" className="submit_btn" onClick={() => navigate("/")}>Cancel</button>
+                    <button type="button" id="article_edit_Cancel_btn" className="submit_btn" onClick={()=> navigate("/")}>Cancel</button>
 
                 </form>
             </div>
