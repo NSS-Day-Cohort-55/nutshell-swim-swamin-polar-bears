@@ -1,0 +1,32 @@
+.card {
+    width: 60%;
+    border-radius: 10px;
+    display: flex;
+}
+
+.card p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.message-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-header :first-child {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sent-card {
+    margin: 10px 0px 10px 35%;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+}
+
+.received-card {
+    margin: 10px 35% 10px 0px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgb(156, 212, 180) 9%, rgb(86, 104, 93) 89%);
+}

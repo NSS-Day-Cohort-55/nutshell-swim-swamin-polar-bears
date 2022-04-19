@@ -54,7 +54,7 @@ export const MessageEditForm = () => {
             onChange={handleFieldChange}
             required
             autoFocus
-            readonly="readonly"
+            readOnly="readOnly"
             className="controlled_form"
             placeholder="Message Sender"
             value={sender.name}
@@ -68,7 +68,7 @@ export const MessageEditForm = () => {
             onChange={handleFieldChange}
             required
             autoFocus
-            readonly="readonly"
+            readOnly="readOnly"
             className="controlled_form"
             placeholder="Message Recipient"
             value={message.user?.name}
