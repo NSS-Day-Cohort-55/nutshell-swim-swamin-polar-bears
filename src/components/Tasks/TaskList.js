@@ -27,19 +27,19 @@ export const TaskList = () => {
     return (
         <>
             <div className='task_section'>
-            <section className="section-content">
-                <button type="button"
-                    className="task_btn"
-                    onClick={() => { navigate("/tasks/create") }}>
-                    Create Task
-                </button>
-            </section>
-            <div className="container-cards">
-                {tasks.map(task => <TaskCard
-                    key={task.id}
-                    task={task}
-                    handleDeleteTask={handleDeleteTask} />)}
-            </div>
+                <section className="section-content">
+                    <button type="button"
+                        className="task_btn"
+                        onClick={() => { navigate("/tasks/create") }}>
+                        Create Task
+                    </button>
+                    <div className="container-cards">
+                        {tasks.map(task => <TaskCard
+                            key={task.id}
+                            task={task}
+                            handleDeleteTask={handleDeleteTask} />)}
+                    </div>
+                </section>
             </div>
 
 

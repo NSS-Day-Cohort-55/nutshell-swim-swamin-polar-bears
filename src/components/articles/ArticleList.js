@@ -14,20 +14,13 @@ export const ArticleList = ({ getLoggedInUser }) => {
 
   const sortArticlesByFriends = (userId) => {
     //*getting all of the logged in users friends
-    getMyFriends(userId).then(myFriends => ( setFriends(myFriends)
+    getMyFriends(userId).then(myFriends => (setFriends(myFriends)
     ))
-    //*getting all articles and comparing the poster's userId to the userId of all friends
-    // getArticles().then(allArticles => {
-    //   for (let item of allArticles){
-    //     if(item.userId === friends.userId){
-    //       updateFriendArticles(item)
-    //     }
-    //   } return friendArticles
-    // })
+
 
     return (
       <>
-      
+
 
         {friendArticles.map((article) => (<ArticleCard
           key={article.id}
@@ -35,21 +28,12 @@ export const ArticleList = ({ getLoggedInUser }) => {
           handleDeleteArticle={handleDeleteArticle}
           getLoggedInUser={getLoggedInUser}
         />))}
-      
+
       </>
     )
   }
 
-  // useEffect(() => {
-  //   console.log("Hi")
-  //   getArticles().then(allArticles => {
-  //     for (let item of allArticles){
-  //       if(item.userId === friends.userId){
-  //         updateFriendArticles(item)
-  //       }
-  //     } return friendArticles
-  //   })
-  // }, [friends])
+
 
   const getAllArticles = () => {
     return getArticles().then((article) => {
@@ -76,16 +60,16 @@ export const ArticleList = ({ getLoggedInUser }) => {
       <div className="articles_flex">
         <Weather />
         <section className="articles_card_container">
-        <button
-          type="button"
-          className="btn_article"
-          onClick={() => {
-            navigate("/create/");
-          }}
-        >
-          Add new article
-        </button>
-        <button type="button" className="btn_article_sort" onClick={() => {navigate("/onlyfriends")}}>Friend's Articles</button>
+          <button
+            type="button"
+            className="btn_article"
+            onClick={() => {
+              navigate("/create/");
+            }}
+          >
+            Add new article
+          </button>
+          <button type="button" className="btn_article_sort" onClick={() => { navigate("/onlyfriends") }}>Friend's Articles</button>
           {articles.map((article) => (
             <ArticleCard
               key={article.id}
