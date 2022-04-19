@@ -37,13 +37,16 @@ export const EventList = ({getLoggedInUser}) => {
 
     return (
         <>
-            <button type='button'
-                className='btn'
-                onClick={() => {navigate("/events/create")}}>
-                Add An Event!
-            </button>
             <div className='cards-container'>
-                {events.map(event=> <EventCard eventObj={event} key={event.id} handleDeleteEvent={handleDeleteEvent} getLoggedInUser={getLoggedInUser} forecastObj={forecast}/>)}
+                <div className='cards-display'>
+
+                <button type='button'
+                    className='new_event_btn'
+                    onClick={() => {navigate("/events/create")}}>
+                    Add An Event!
+                </button>
+                    {events.map(event=> <EventCard eventObj={event} key={event.id} handleDeleteEvent={handleDeleteEvent} getLoggedInUser={getLoggedInUser} forecastObj={forecast}/>)}
+                </div>
             </div>
         </>
     )

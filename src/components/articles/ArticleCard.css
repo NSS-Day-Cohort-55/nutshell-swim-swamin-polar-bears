@@ -18,7 +18,7 @@ margin-left: 20%;
 
 .btn_article{
     width: 100%;
-    background-color: #007a35;
+    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
     color: white;
     border-radius: 8px;
     border: solid 2px #007a35;
@@ -52,22 +52,26 @@ margin-left: 20%;
     align-content: center;
     align-items: center;
     color: white;
-    background-color: #007a35;
+    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
     border-radius: 10px 0px 0px 10px;
-    padding-left: .5em;
+    padding-left: 1em;
 }
 
 #delete_button{
     /* height: 50%; */
     border-radius: 0px 10px 0px 0px;
-    flex: 5;
+    flex: 1;
     padding: 0;
     background-color: #a45454;
     color: white;
+    border: none;
 }
 
 #edit_button{
     /* height: 50%; */
     border-radius: 0px 0px 10px 0px;
-    flex: 5;
+    flex: 1;
+    border: none;
+    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+    color: white;
 }
