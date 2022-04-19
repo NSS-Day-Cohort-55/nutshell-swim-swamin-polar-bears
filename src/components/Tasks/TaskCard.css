@@ -4,6 +4,6 @@
 }
 .task_btn {
     color: white;
-    background-color: #008037;
+    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
     width: 100%;
 }
