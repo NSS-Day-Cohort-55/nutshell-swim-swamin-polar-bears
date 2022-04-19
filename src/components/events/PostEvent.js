@@ -48,8 +48,8 @@ export const PostEvent = ({getLoggedInUser}) => {
 
 
     return (
-        <form className="form">
-            <button type="button" className="btn btn-primary" disabled={isLoading}
+        <form className="event_form">
+            <button type="button" className="btn_primary" disabled={isLoading}
 				onClick={handleClickSaveEvent}>
 				Create Event
             </button>

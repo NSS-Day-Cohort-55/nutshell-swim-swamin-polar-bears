@@ -34,3 +34,10 @@
     border-radius: 5px;
     color: white;
 }
+
+.create_new_task{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 2em;
+}

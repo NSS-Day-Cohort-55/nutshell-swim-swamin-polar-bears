@@ -12,11 +12,11 @@ nav {
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: #dde3de;
+    color: #18842a;
     background-color: green;
     border-color: green;
     text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out; */
 }
 .nav-link:hover {
     color: green;
