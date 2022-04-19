@@ -4,21 +4,24 @@
     border-radius: 11px;
     /* padding-left: .5em; */
     display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px black;
 }
 .articles_flex{
     margin-top: 2em;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
 }
 
 .articles_card_container{
-flex: 3;
-margin-left: 20%;
+    max-width: 60vw;
+    margin: 0 20%;
+    
 }
 
 .btn_article{
     width: 100%;
-    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+    background: #1ba361;
     color: white;
     border-radius: 8px;
     border: solid 2px #007a35;
@@ -28,7 +31,7 @@ margin-left: 20%;
     display: flex;
     flex-direction: column;
     flex: 1;
-    border-radius: 0px 10px 10px 0px;
+    /* border-radius: 0px 10px 10px 0px; */
 
 }
 
@@ -37,41 +40,50 @@ margin-left: 20%;
     /* border-radius: 6px; */
     height: 100%;
 }
-
+.link_icon{
+    /* background-image: url("../../../public/images/link.png"); */
+    background-color: #BE1815;
+    flex: 1;
+}
 
 
 .article_body{
     flex-direction: column;
-    flex: 2.5;
-    margin-left: 1em;
+    flex: 3;
+    color: white;
+    background: #374238;
+}
+.article_body p, a{
+    /* margin-left: 1em; */
 }
 
 .article_title{
-    flex: 1 1;
+    /* flex: 1 1; */
     display: flex;
     align-content: center;
     align-items: center;
     color: white;
-    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
-    border-radius: 10px 0px 0px 10px;
+    text-shadow: 0px 0px 5px black;
+    background: #1ba361;
+    /* border-radius: 10px 10px 0px 0px; */
     padding-left: 1em;
 }
 
 #delete_button{
     /* height: 50%; */
-    border-radius: 0px 10px 0px 0px;
+    /* border-radius: 0px 0px 10px 10px; */
     flex: 1;
     padding: 0;
-    background-color: #a45454;
+    background-color: #BE1815;
     color: white;
     border: none;
 }
 
 #edit_button{
     /* height: 50%; */
-    border-radius: 0px 0px 10px 0px;
+    /* border-radius: 0px 0px 10px 0px; */
     flex: 1;
     border: none;
-    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+    background: #1ba361;
     color: white;
 }

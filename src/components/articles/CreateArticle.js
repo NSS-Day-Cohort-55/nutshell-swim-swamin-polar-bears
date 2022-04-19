@@ -39,7 +39,9 @@ export const CreateArticle = ({getLoggedInUser}) =>{
         <div className="new_article_display">
             <div className="new_article">
                 <form>
+                    <div className="header_div">
                     <h2>New Article</h2>
+                    </div>
                     <fieldset>
                         <label htmlFor="article_name" className="label">Article Title</label>
                         <input type="text" id="title"  onChange={controlInput} required autoFocus className="controlled_form" placeholder="Article title"value={articles.title} />
