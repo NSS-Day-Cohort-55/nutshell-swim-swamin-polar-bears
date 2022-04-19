@@ -7,6 +7,7 @@ import {
   addMessage,
 } from "../modules/MessageManager";
 import { MessageCard } from "./MessageCard";
+import "./MessageList.css"
 
 export const MessageList = ({ getLoggedInUser }) => {
   const [messages, setMessages] = useState([]);
@@ -32,7 +33,7 @@ export const MessageList = ({ getLoggedInUser }) => {
   return (
     <>
       <Link to={`/messages/new`}>
-        <button>New Message</button>
+        <button>New Public Message</button>
       </Link>
       <div className="container-cards">
         {messages.map((message) => {
