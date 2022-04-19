@@ -4,8 +4,9 @@ import "./TaskCard.css"
 
 export const TaskCard = ({ task, handleDeleteTask }) => {
   return (
-    <div className="card_content_container">
-      <div className="card-content">
+    
+    <div className="task_container">
+      <div className="task_content">
         <picture>
           <img src={'./images/Taskimg.png'} width="50" alt="My Task" />
         </picture>
