@@ -75,7 +75,7 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, foreca
 
 
     return (
-        <div className="card">
+        <div className="event_card">
             <div className="card-content">
                 <div className="event_title">
                 <h3><span className="card-eventName">{eventObj.name}</span></h3>

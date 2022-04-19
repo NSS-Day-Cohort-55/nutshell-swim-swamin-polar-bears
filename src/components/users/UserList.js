@@ -6,6 +6,7 @@ import {
   existingFriendShipCheck, findUser
 } from "../modules/FriendManager";
 import { UserCard } from "./UserCard";
+import "./UserCard.css"
 
 export const UserList = ({ getLoggedInUser }) => {
   const [users, setUsers] = useState([]);
@@ -61,9 +62,11 @@ export const UserList = ({ getLoggedInUser }) => {
   return (
     
     <>
+    <div className="search_bar">
       <label htmlFor="search_bar">Find friends</label>
       <input type="text" id="name" onChange={controlInput} />
       <button type="button" id="search_btn" onClick={handleSearch}>Search</button>
+    </div>
       <div className="container-cards">
       {users.length > 0 ? users.map(user => <UserCard key={user.id} user={user} handleAddFriend={handleAddFriend}/>) : ""}
       </div>
