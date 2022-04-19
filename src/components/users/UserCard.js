@@ -15,7 +15,9 @@ export const UserCard = ({ user, handleAddFriend }) => {
             Add As Friend
           </button>
         </div>
-      </div>
+      </div> 
+
     </>
   );
 };
+

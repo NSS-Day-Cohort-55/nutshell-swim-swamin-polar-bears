@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import {
   getAllUsers,
   addFriend,
-  existingFriendShipCheck,
+  existingFriendShipCheck, findUser
 } from "../modules/FriendManager";
 import { UserCard } from "./UserCard";
 
 export const UserList = ({ getLoggedInUser }) => {
   const [users, setUsers] = useState([]);
+  const [userSearch, foundUser] = useState({
+    name: ""
+  })
 
   //temporarily hard-coding logged in user. will need to fix this later
 
@@ -18,6 +21,12 @@ export const UserList = ({ getLoggedInUser }) => {
     });
   };
 
+  const findUsers = (userName) =>{
+    findUser(userName).then(user =>{
+      setUsers(user)
+      console.log(user)
+    })
+  }
   const handleAddFriend = (id) => {
     const newFriend = {
       userId: id,
@@ -32,22 +41,30 @@ export const UserList = ({ getLoggedInUser }) => {
     }
   };
 
-  const navigate = useNavigate();
+  const controlInput = (event) =>{
+    const searchedUser = {...userSearch}
 
-  useEffect(() => {
-    getUsers();
-  }, []);
+    searchedUser[event.target.id] = event.target.value
+    console.log("event", searchedUser)
+    foundUser(searchedUser)
+  }
+
+  const handleSearch = () =>{
+    findUsers(userSearch.name)
+  }
+
+  // useEffect(() => {
+  //   findUsers();
+  // }, []);
 
   return (
+    
     <>
+      <label htmlFor="search_bar">Find friends</label>
+      <input type="text" id="name" onChange={controlInput} />
+      <button type="button" id="search_btn" onClick={handleSearch}>Search</button>
       <div className="container-cards">
-        {users.map((user) => (
-          <UserCard
-            key={user.id}
-            user={user}
-            handleAddFriend={handleAddFriend}
-          />
-        ))}
+      {users.length > 0 ? users.map(user => <UserCard key={user.id} user={user} handleAddFriend={handleAddFriend}/>) : ""}
       </div>
     </>
   );
