@@ -28,3 +28,19 @@ export const deleteMessage = (id) => {
     method: "DELETE",
   }).then((result) => result.json());
 };
+
+export const updateMessage = (editedMessage) => {
+  return fetch(`${remoteURL}/messages/${editedMessage.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(editedMessage),
+  }).then((data) => data.json());
+};
+
+export const getMessageById = (messageId) => {
+  return fetch(
+    `${remoteURL}/messages/${messageId}?_expand=user`
+  ).then((res) => res.json());
+};
