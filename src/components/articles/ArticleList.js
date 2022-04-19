@@ -1,13 +1,55 @@
 import react, { useState, useEffect } from "react";
 import { ArticleCard } from "./ArticleCard";
 import { useNavigate } from "react-router-dom";
-import { getArticles, deleteArticle } from "../modules/ArticleManager";
+import { getMyFriends } from "../modules/FriendManager";
+import { getArticles, deleteArticle, getArticleById } from "../modules/ArticleManager";
 import { Weather } from "../weather/Weather";
 import "./ArticleCard.css"
 
 export const ArticleList = ({ getLoggedInUser }) => {
   const navigate = useNavigate();
   const [articles, updateArticles] = useState([]);
+  const [friendArticles, updateFriendArticles] = useState([])
+  const [friends, setFriends] = useState([])
+
+  const sortArticlesByFriends = (userId) => {
+    //*getting all of the logged in users friends
+    getMyFriends(userId).then(myFriends => ( setFriends(myFriends)
+    ))
+    //*getting all articles and comparing the poster's userId to the userId of all friends
+    // getArticles().then(allArticles => {
+    //   for (let item of allArticles){
+    //     if(item.userId === friends.userId){
+    //       updateFriendArticles(item)
+    //     }
+    //   } return friendArticles
+    // })
+
+    return (
+      <>
+      
+
+        {friendArticles.map((article) => (<ArticleCard
+          key={article.id}
+          article={article}
+          handleDeleteArticle={handleDeleteArticle}
+          getLoggedInUser={getLoggedInUser}
+        />))}
+      
+      </>
+    )
+  }
+
+  // useEffect(() => {
+  //   console.log("Hi")
+  //   getArticles().then(allArticles => {
+  //     for (let item of allArticles){
+  //       if(item.userId === friends.userId){
+  //         updateFriendArticles(item)
+  //       }
+  //     } return friendArticles
+  //   })
+  // }, [friends])
 
   const getAllArticles = () => {
     return getArticles().then((article) => {
@@ -43,6 +85,7 @@ export const ArticleList = ({ getLoggedInUser }) => {
         >
           Add new article
         </button>
+        <button type="button" className="btn_article_sort" onClick={() => {navigate("/onlyfriends")}}>Friend's Articles</button>
           {articles.map((article) => (
             <ArticleCard
               key={article.id}
