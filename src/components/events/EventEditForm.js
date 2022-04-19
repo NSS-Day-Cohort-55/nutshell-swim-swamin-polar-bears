@@ -36,6 +36,7 @@ export const EventEditForm = ({getLoggedInUser}) => {
 
     return (
         <form>
+            <div className="new_event">
             <h2>Edit Event</h2>
             <fieldset>
                 <label htmlFor="event_name">Name Of Event:</label>
@@ -55,6 +56,7 @@ export const EventEditForm = ({getLoggedInUser}) => {
             </fieldset>
             <button type="button" id="event_edit_cancel_btn" className="submit_btn" onClick={() => navigate("/events")}>Cancel</button>
             <button type="button" id="event_edit_submit_btn" className="submit_btn" onClick={handleUpdateEvent}>Submit</button> 
+            </div>
         </form>
     )
 }
