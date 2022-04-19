@@ -3,6 +3,13 @@ const remoteURL = "http://localhost:8088"
 export const getAllEvents = () => {
     return fetch(`${remoteURL}/events?_expand=user`)
     .then(res => res.json())
+    .then(parsedResult => {
+        parsedResult.sort(
+            (currentEntry, nextEntry) => 
+            Date.parse(currentEntry.date) -Date.parse(nextEntry.date)
+        )
+        return parsedResult
+    })
 }
 
 export const getEventById = (eventId) => {
