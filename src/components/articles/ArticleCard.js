@@ -17,13 +17,13 @@ export const ArticleCard = ({ article, handleDeleteArticle, getLoggedInUser }) =
                 <h3>{article.title}</h3>
                 </div>
                 <div className="article_body">
-                    <p>Synopsis: {article.synopsis}</p>
+                    <p>{article.synopsis}</p>
                     <a href={article.url} target="_blank">Read article</a>
                 </div>
+                <div className="link_icon"></div>
                 <div className="btn_container">
-                    {user === article.userId ? <button type="button" id="delete_button"onClick={() => handleDeleteArticle(article.id)}>Delete</button> : ""}
-
                     {user === article.userId ? <Link to={`/${article.id}/edit`}><button type="button" id="edit_button">Edit</button></Link> : ""}
+                    {user === article.userId ? <button type="button" id="delete_button"onClick={() => handleDeleteArticle(article.id)}>Delete</button> : ""}
                 </div>
             </div>
         </section>
