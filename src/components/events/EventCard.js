@@ -86,9 +86,9 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, foreca
                 <p><b>Forecast:</b> {genForecast(eventObj, forecastObj).description} </p>
                 <p><b>Description:</b> {eventObj.description}</p>
                 </div>
-                <div className="btn_container">
-                    {user === eventObj.userId? <Link to={`/events/${eventObj.id}/edit`}><button type="button">Edit</button></Link>: ""}
-                    {user === eventObj.userId? <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>: ""}
+                <div className="event_btn_container">
+                    {user === eventObj.userId? <Link to={`/events/${eventObj.id}/edit`}><button id="event_edit_btn" type="button">Edit</button></Link>: ""}
+                    {user === eventObj.userId? <button type="button" id="event_delete_btn" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>: ""}
                 </div>
                 </div>
             </div>
