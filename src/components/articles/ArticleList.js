@@ -1,34 +1,57 @@
-import react, {useState, useEffect} from "react";
+import react, { useState, useEffect } from "react";
 import { ArticleCard } from "./ArticleCard";
 import { useNavigate } from "react-router-dom";
-import { getArticles, deleteArticle} from "../modules/ArticleManager"
+import { getMyFriends } from "../modules/FriendManager";
+import { getArticles, deleteArticle, getArticleById } from "../modules/ArticleManager";
 import { Weather } from "../weather/Weather";
 import "./ArticleCard.css"
 
-export const ArticleList = ({getLoggedInUser}) =>{
+export const ArticleList = ({ getLoggedInUser }) => {
+  const navigate = useNavigate();
+  const [articles, updateArticles] = useState([]);
+  const [friendArticles, updateFriendArticles] = useState([])
+  const [friends, setFriends] = useState([])
 
-    const navigate = useNavigate()
-    const [articles, updateArticles] = useState([])
+  const sortArticlesByFriends = (userId) => {
+    //*getting all of the logged in users friends
+    getMyFriends(userId).then(myFriends => (setFriends(myFriends)
+    ))
 
-    const getAllArticles = () =>{
-        return getArticles()
-            .then(article => {
-                article.sort((a, b) =>{
-                    return new Date(a.timestamp) - new Date(b.timestamp)
-                }).then(updateArticles(article))
-            })
-    }
 
-    const handleDeleteArticle = (articleObj) =>{
-        deleteArticle(articleObj)
-            .then( () => getAllArticles())
-    }
+    return (
+      <>
 
-    useEffect(()=>{
-        
-        getAllArticles()
-        
-    }, [])
+
+        {friendArticles.map((article) => (<ArticleCard
+          key={article.id}
+          article={article}
+          handleDeleteArticle={handleDeleteArticle}
+          getLoggedInUser={getLoggedInUser}
+        />))}
+
+      </>
+    )
+  }
+
+
+
+  const getAllArticles = () => {
+    return getArticles().then((article) => {
+      article
+        .sort((a, b) => {
+          return new Date(a.timestamp) - new Date(b.timestamp);
+        })
+        .then(updateArticles(article));
+    });
+  };
+
+  const handleDeleteArticle = (articleObj) => {
+    deleteArticle(articleObj).then(() => getAllArticles());
+  };
+
+  useEffect(() => {
+    getAllArticles();
+  }, []);
 
   return (
     <>
@@ -37,16 +60,16 @@ export const ArticleList = ({getLoggedInUser}) =>{
       <div className="articles_flex">
         <Weather />
         <section className="articles_card_container">
-        <button
-          type="button"
-          className="btn_article"
-          onClick={() => {
-            navigate("/create/");
-          }}
-        >
-          Add new article
-        </button>
-        <button type="button" className="btn_article_sort" onClick={() => {navigate("/onlyfriends")}}>Friend's Articles</button>
+          <button
+            type="button"
+            className="btn_article"
+            onClick={() => {
+              navigate("/create/");
+            }}
+          >
+            Add new article
+          </button>
+          <button type="button" className="btn_article_sort" onClick={() => { navigate("/onlyfriends") }}>Friend's Articles</button>
           {articles.map((article) => (
             <ArticleCard
               key={article.id}
