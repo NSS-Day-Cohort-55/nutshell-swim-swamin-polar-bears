@@ -6,6 +6,11 @@
 .container--login {
   margin-top: 3em;
   color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 .container--login fieldset {
   width: 500px

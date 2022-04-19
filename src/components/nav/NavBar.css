@@ -12,10 +12,21 @@ nav {
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: #dce0e5;
+    color: #dde3de;
+    background-color: green;
+    border-color: green;
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
-.nav link :hover {
+.nav-link:hover {
+    color: green;
+}
+a {
+    color: green;
+}
+.nav-item {
+    color: green;
+}
+.nav-pills{
     color: green;
 }
