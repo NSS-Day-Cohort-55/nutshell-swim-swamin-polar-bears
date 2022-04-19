@@ -25,4 +25,19 @@ body {
 }
 .card {
   margin: 2em;
+  background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+
+}
+.event_title{
+  background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+  color: white;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+.event_body{
+  background-color: #fefefe;
+  color: black;
+}
+.card-content{
+  width: 100%;
 }

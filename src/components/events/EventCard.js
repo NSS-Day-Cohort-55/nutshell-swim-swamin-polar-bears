@@ -79,7 +79,6 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, foreca
             <div className="card-content">
                 <div className="event_title">
                 <h3><span className="card-eventName">{eventObj.name}</span></h3>
-                </div>
                 <div className="event_body">
                 <h5><span className="card-eventPoster">Posted By: {eventObj.user?.name}</span></h5>
                 <p>{formatDate(eventObj.date)}</p>
@@ -90,6 +89,7 @@ export const EventCard = ({ eventObj, handleDeleteEvent, getLoggedInUser, foreca
                 <div className="btn_container">
                     {user === eventObj.userId? <Link to={`/events/${eventObj.id}/edit`}><button type="button">Edit</button></Link>: ""}
                     {user === eventObj.userId? <button type="button" onClick={() => handleDeleteEvent(eventObj.id)}>Delete</button>: ""}
+                </div>
                 </div>
             </div>
         </div>
