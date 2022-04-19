@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getUserById } from "../modules/FriendManager";
+import { getUserById, getLoggedInUser } from "../modules/FriendManager";
 import { addFriend } from "../modules/FriendManager";
 // import { MessageModal } from "./MessageModal";
 
@@ -9,23 +9,45 @@ export const MessageCard = ({
   handleDeleteMessage,
   getLoggedInUser,
 }) => {
-  const [currentUser, setCurrentUser] = useState({
-    name: "",
-    email: "",
-  });
+  const [currentUser, setCurrentUser] = useState({});
+
+  const [sender, setSender] = useState({});
+
+  const [recipient, setRecipient] = useState({});
+
   const [click, updateClick] = useState(false);
 
   useEffect(() => {
-    getUserById(parseInt(message.currentUserId)).then((thisUser) => {
-      setCurrentUser(thisUser);
+    getUserById(parseInt(getLoggedInUser())).then((aUser) => {
+      setCurrentUser(aUser);
+    });
+  }, []);
+
+  useEffect(() => {
+    getUserById(parseInt(message.currentUserId)).then((aUser) => {
+      setSender(aUser);
+    });
+  }, []);
+
+  useEffect(() => {
+    getUserById(parseInt(message.userId)).then((aUser) => {
+      setRecipient(aUser);
     });
   }, []);
 
   const checkPublic = () => {
-    if (message.user?.name) {
-      return message.user?.name;
+    if (recipient.name) {
+      return recipient.name;
     } else {
       return "Public";
+    }
+  };
+
+  const checkMessageOwner = () => {
+    if (currentUser.id === sender.id) {
+      return true;
+    } else {
+      return false;
     }
   };
 
@@ -56,21 +78,27 @@ export const MessageCard = ({
 
   return (
     <>
-      <div className="card">
+      <div
+        className={`card ${
+          checkMessageOwner() ? "sent-card" : "received-card"
+        }`}
+      >
         <div className="card-content">
-          <h3>
-            <span
-              className="card-messagename"
-              onClick={() => (click ? updateClick(false) : updateClick(true))}
-            >
-              {click ? MessageModal(currentUser) : `From: ${currentUser.name}`}
-            </span>
-          </h3>
-          <h3>
-            To: <span className="card-messagename">{checkPublic()}</span>
-          </h3>
+          <div className="message-header">
+            <h3>
+              <span
+                className="card-messagename"
+                onClick={() => (click ? updateClick(false) : updateClick(true))}
+              >
+                {click ? MessageModal(currentUser) : `From: ${sender.name}`}
+              </span>
+            </h3>
+            <h3>
+              To: <span className="card-messagename">{checkPublic()}</span>
+            </h3>
+          </div>
           <p>{message.body}</p>
-          {message.currentUserId === getLoggedInUser() ? (
+          {sender.id === currentUser.id ? (
             <>
               <button
                 type="button"
