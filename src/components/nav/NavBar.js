@@ -7,8 +7,8 @@ export const NavBar = ({clearUser}) => {
   return (
     <nav className="navbar text-white flex-md-nowrap p-0 shadow">
 
-      <img className="logo" src="../images/Swimswamminpolarbears(3).png" alt="logo"/>
-      <img className="logo2" src="../images/N2.png" alt="logo"/>
+      <img className="logo" src="../images/Swimswamminpolarbears(4).png" alt="logo"/>
+      <img className="logo2" src="../images/N5.png" alt="logo"/>
 
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">

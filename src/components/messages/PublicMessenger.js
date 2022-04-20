@@ -39,7 +39,7 @@ export const PublicMessenger = ({ getLoggedInUser }) => {
   }, []);
 
   return (
-    <div>
+    <div className="new_message_form">
       <h2>New Message</h2>
       <fieldset>
         <div className="form-group">
@@ -70,7 +70,7 @@ export const PublicMessenger = ({ getLoggedInUser }) => {
       </fieldset>
       <button
         type="button"
-        id="article_submit_btn"
+        id="message_submit_btn"
         className="submit_btn"
         onClick={sendMessage}
       >

@@ -48,11 +48,7 @@ export const PostEvent = ({getLoggedInUser}) => {
 
 
     return (
-        <form className="form">
-            <button type="button" className="btn btn-primary" disabled={isLoading}
-				onClick={handleClickSaveEvent}>
-				Create Event
-            </button>
+        <form className="event_form">
             <h2 className='form_title'>New Event</h2>
             <fieldset>
                 <div className='form-group'>
@@ -79,6 +75,10 @@ export const PostEvent = ({getLoggedInUser}) => {
                     <input type="text" id="location" className="form-control" onChange={handleControlledInputChange} value={eventObj.location}/>
                 </div>
             </fieldset>
+            <button type="button" className="btn_primary" disabled={isLoading}
+				onClick={handleClickSaveEvent}>
+				Create Event
+            </button>
         </form>
     )
 

@@ -3,3 +3,51 @@
     flex-direction: column;
     color: white;
 }
+
+.new_task{ 
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 2em;
+}
+
+.label {
+    display: flex;
+    justify-items: flex-start;
+}
+.controlled_form {
+    display: flex;
+    justify-items: flex-end;
+}
+#task_submit_btn{
+    width: 100%;
+    margin-top: 1em;
+    background-color: #008037;
+    border-radius: 5px;
+    color: white;
+}
+
+#task_edit_Cancel_btn{
+    width: 100%;
+    margin-top: 1em;
+    background-color: #008037;
+    border-radius: 5px;
+    color: white;
+}
+
+.create_new_task{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 2em;
+}
+
+#task_name{
+    background-color: white;
+}
+#task_description{
+    background-color: white;
+}
+#task_completionDate{
+    background-color: white;
+}

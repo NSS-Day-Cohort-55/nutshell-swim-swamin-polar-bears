@@ -12,7 +12,7 @@ export const Login = ({setAuthUser}) => {
 	const navigate = useNavigate();
 
 	const particlesInit = async (main) => {
-		console.log(main);
+		// console.log(main);
 
 		await loadFull(main);
 	};
@@ -91,6 +91,7 @@ export const Login = ({setAuthUser}) => {
 				init={particlesInit}
 				loaded={particlesLoaded}
 				options={{
+					
 					background: {
 					// color: {
 					// 	value: "#0d47a1",

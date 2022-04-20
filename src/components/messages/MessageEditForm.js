@@ -44,10 +44,10 @@ export const MessageEditForm = () => {
 
   return (
     <>
-      <form>
+      <form className="edit_message_form">
         <h2>Edit Message</h2>
         <fieldset>
-          <label htmlFor="message_sender">Message Sender</label>
+          <label className="edit_message_label" htmlFor="message_sender">Message Sender</label>
           <input
             type="text"
             id="currentUserId"
@@ -55,13 +55,13 @@ export const MessageEditForm = () => {
             required
             autoFocus
             readOnly="readOnly"
-            className="controlled_form"
+            className="edit_message_controlled_form"
             placeholder="Message Sender"
             value={sender.name}
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="message_recipient">Message Recipient</label>
+          <label className="edit_message_label" htmlFor="message_recipient">Message Recipient</label>
           <input
             type="text"
             id="userId"
@@ -69,20 +69,20 @@ export const MessageEditForm = () => {
             required
             autoFocus
             readOnly="readOnly"
-            className="controlled_form"
+            className="edit_message_controlled_form"
             placeholder="Message Recipient"
             value={message.user?.name}
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="message-body">Message</label>
+          <label className="edit_message_label" htmlFor="message-body">Message</label>
           <input
             type="text"
             id="body"
             onChange={handleFieldChange}
             required
             autoFocus
-            className="controlled_form"
+            className="edit_message_controlled_form"
             placeholder="Message"
             value={message.body}
           />
