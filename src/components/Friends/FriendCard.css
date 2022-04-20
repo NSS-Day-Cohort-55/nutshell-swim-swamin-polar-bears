@@ -44,11 +44,11 @@
     width: 200px;
 }
 #unfriend_btn{
-    border-radius: 0px 0px 10px 10px;
+    /* border-radius: 0px 0px 10px 10px; */
     background: linear-gradient(360deg, rgba(190, 24, 21, 1) 60%, rgba(43, 54, 72, 1) 100%);
     color: white;
     border: none;
-
+    background: linear-gradient(180deg, rgba(190,24,21,1) 28%, rgba(97,30,45,1) 98%);
 }
 #message_btn{
     background: linear-gradient(180deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
