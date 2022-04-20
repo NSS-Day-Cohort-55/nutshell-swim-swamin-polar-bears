@@ -22,8 +22,8 @@ export const ArticleCard = ({ article, handleDeleteArticle, getLoggedInUser }) =
                 </div>
                 <div className="link_icon"></div>
                 <div className="btn_container">
-                    {user === article.userId ? <Link to={`/${article.id}/edit`}><button type="button" id="edit_button">Edit</button></Link> : ""}
-                    {user === article.userId ? <button type="button" id="delete_button"onClick={() => handleDeleteArticle(article.id)}>Delete</button> : ""}
+                    {user === article.userId ? <Link to={`/${article.id}/edit`}><button type="button" id="article_edit_button">Edit</button></Link> : ""}
+                    {user === article.userId ? <button type="button" id="article_delete_button"onClick={() => handleDeleteArticle(article.id)}>Delete</button> : ""}
                 </div>
             </div>
         </section>

@@ -41,9 +41,9 @@ export const ArticleEditForm = ({getLoggedInUser}) =>{
     return (
         <div className="new_article_display">
             <div className="new_article">
-            <div className="header_div">
-                        <h2>Edit Article</h2>
-                    </div>
+                <div className="header_div">
+                    <h2>Edit Article</h2>
+                </div>
                 <form>
                     <fieldset className="new_article_field">
                         <label htmlFor="article_name"className="label">Article Title</label>

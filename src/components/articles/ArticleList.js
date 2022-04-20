@@ -60,16 +60,10 @@ export const ArticleList = ({ getLoggedInUser }) => {
       <div className="articles_flex">
         <Weather />
         <section className="articles_card_container">
-        <button
-          type="button"
-          className="btn_article"
-          onClick={() => {
-            navigate("/create/");
-          }}
-        >
-          Add new article
-        </button>
-        <button type="button" className="btn_article" onClick={() => {navigate("/onlyfriends")}}>Friend's Articles</button>
+        <div className="list_btn_container">
+        <button type="button" className="btn_article" onClick={() => {navigate("/create/");}} id="new_article_btn">Add new article</button>
+        <button type="button" className="btn_article" onClick={() => {navigate("/onlyfriends")}} id="friend_article_btn">Friend's Articles</button>
+        </div>
           {articles.map((article) => (
             <ArticleCard
               key={article.id}
