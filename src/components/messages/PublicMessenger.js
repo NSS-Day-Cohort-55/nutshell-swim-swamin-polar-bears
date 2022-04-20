@@ -57,13 +57,15 @@ export const PublicMessenger = ({ getLoggedInUser }) => {
       </fieldset>
       <fieldset>
         <label htmlFor="body">Message Body: </label>
-        <input
+        <textarea
           type="text"
           id="body"
           onChange={controlInput}
+          rows='5'
+          cols='35'
           required
           autoFocus
-          className="controlled_form"
+          className="controlled_form public-message-body"
           placeholder="Got something to say?"
           value={message.body}
         />
