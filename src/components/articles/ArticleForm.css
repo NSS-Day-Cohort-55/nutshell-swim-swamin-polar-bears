@@ -11,6 +11,19 @@
     display: flex;
     justify-items: flex-start;
 }
+.list_btn_container{
+    display:flex;
+    flex-direction: row;
+}
+#new_article_btn{
+    background: linear-gradient(180deg, rgba(55,66,56,1) 14%, rgba(140,146,140,1) 86%, rgba(144,150,144,1) 100%);
+    border: none;
+}
+#friend_article_btn{
+    background: linear-gradient(1800deg, rgba(27,163,97,1) 25%, rgba(43,134,105,1) 60%, rgba(30,97,76,1) 98%);;
+    border: none;
+}
+
 .controlled_form {
     display: flex;
     justify-items: flex-end;
@@ -30,11 +43,12 @@
     color: red;
 } */
 .header_div{
-    background:#1ba361;
+    /* background:#1ba361; */
     width: 100%;
 }
 .header_div h2{
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 0px 0px 5px #1ba361;
+    /* text-align: center; */
     /* padding-left: 1em; */
     /* text-align: center; */
 }
@@ -52,6 +66,7 @@ form label{
     /* padding-left: 1em; */
 }
 form input{
-    background-color: #1ba361;
+    background-color: #2B3648;
     width: 100%;
+    color: white;
 }
