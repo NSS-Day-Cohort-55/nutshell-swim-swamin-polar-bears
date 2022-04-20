@@ -7,7 +7,8 @@
 }
 
 nav {
-    background-color: #2b3648;
+    background-color: rgba(43, 54, 72, .8);
+    z-index: 50;
 }
 .nav-link {
     display: block;

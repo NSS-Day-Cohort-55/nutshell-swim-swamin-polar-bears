@@ -45,3 +45,14 @@
     width: 25%;
     margin-top: 2em;
 }
+.edit_message_controlled_form{
+    background-color: white;
+}
+.edit_message_label{
+    color: white;
+    text-shadow: none;
+}
+.edit_message_form{
+    color: white;
+    margin-left: 3em;
+}
