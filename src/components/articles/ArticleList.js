@@ -85,7 +85,7 @@ export const ArticleList = ({ getLoggedInUser }) => {
         >
           Add new article
         </button>
-        <button type="button" className="btn_article_sort" onClick={() => {navigate("/onlyfriends")}}>Friend's Articles</button>
+        <button type="button" className="btn_article" onClick={() => {navigate("/onlyfriends")}}>Friend's Articles</button>
           {articles.map((article) => (
             <ArticleCard
               key={article.id}

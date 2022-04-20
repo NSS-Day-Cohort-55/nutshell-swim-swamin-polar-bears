@@ -14,11 +14,11 @@ export const ArticleCard = ({ article, handleDeleteArticle, getLoggedInUser }) =
         <section className="article_section">
             <div className="article_card">
                 <div className="article_title">
-                <h3>{article.title}</h3>
+                <a href={article.url} target="_blank"><h3>{article.title}</h3></a>
                 </div>
                 <div className="article_body">
                     <p>{article.synopsis}</p>
-                    <a href={article.url} target="_blank">Read article</a>
+                    {/* <a href={article.url} target="_blank">Read article</a> */}
                 </div>
                 <div className="link_icon"></div>
                 <div className="btn_container">

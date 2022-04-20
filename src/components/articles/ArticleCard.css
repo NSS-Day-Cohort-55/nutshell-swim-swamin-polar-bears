@@ -18,6 +18,13 @@
     margin: 0 20%;
     
 }
+.article_section a{
+    color: white;
+    text-decoration: none;
+}
+.article_section a:hover{
+    color: white;
+}
 
 .btn_article{
     width: 100%;
@@ -50,11 +57,12 @@
 .article_body{
     flex-direction: column;
     flex: 3;
+    min-height: 10vh;
     color: white;
     background: #374238;
 }
-.article_body p, a{
-    /* margin-left: 1em; */
+.article_body p{
+    margin-left: 1em;
 }
 
 .article_title{

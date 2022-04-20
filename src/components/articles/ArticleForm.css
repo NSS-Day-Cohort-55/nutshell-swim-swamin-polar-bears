@@ -11,6 +11,13 @@
     display: flex;
     justify-items: flex-start;
 }
+.article_section a{
+    color: white;
+    text-decoration: none;
+}
+.article_section a:hover{
+    color: white;
+}
 .controlled_form {
     display: flex;
     justify-items: flex-end;
@@ -30,11 +37,12 @@
     color: red;
 } */
 .header_div{
-    background:#1ba361;
+    /* background:#1ba361; */
     width: 100%;
 }
 .header_div h2{
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 0px 0px 5px #1ba361;
+    /* text-align: center; */
     /* padding-left: 1em; */
     /* text-align: center; */
 }
@@ -52,6 +60,7 @@ form label{
     /* padding-left: 1em; */
 }
 form input{
-    background-color: #1ba361;
+    background-color: #2B3648;
     width: 100%;
+    color: white;
 }
