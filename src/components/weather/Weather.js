@@ -22,8 +22,8 @@ export const  Weather = () =>{
 
     <div className="weather_container">
         <h3>Today's weather</h3>
-        <p>Temperature: {weather.current}</p>
-        <p>Feels like: {weather.feels_like}</p>
+        <p>Temperature: {Math.floor(weather.current)}&deg;</p>
+        <p>Feels like: {Math.floor(weather.feels_like)}&deg;</p>
         <p>Expect: {weather.description}</p>
     </div>
     )
