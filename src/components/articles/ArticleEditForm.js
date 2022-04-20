@@ -41,10 +41,10 @@ export const ArticleEditForm = ({getLoggedInUser}) =>{
     return (
         <div className="new_article_display">
             <div className="new_article">
+                <form>
                 <div className="header_div">
                     <h2>Edit Article</h2>
                 </div>
-                <form>
                     <fieldset className="new_article_field">
                         <label htmlFor="article_name"className="label">Article Title</label>
                         <input type="text" id="title" onChange={handleChanges} required autoFocus className="controlled_form" placeholder="Article title"value={article.title} />
@@ -63,7 +63,7 @@ export const ArticleEditForm = ({getLoggedInUser}) =>{
                     </fieldset>
                     <div className="button_container">
                     <button type="button" id="article_edit_submit_btn" className="submit_btn" onClick={handleUpdateArticle}>Submit</button>
-                    <button type="button" id="article_edit_Cancel_btn" className="submit_btn" onClick={()=> navigate("/")}>Cancel</button>
+                    <button type="button" id="article_edit_cancel_btn" className="submit_btn" onClick={()=> navigate("/")}>Cancel</button>
                     </div>
 
 
