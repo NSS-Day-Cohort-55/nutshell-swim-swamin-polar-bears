@@ -4,7 +4,7 @@ import { getTaskById, getAllTasks, deleteTask } from '../modules/TaskManger';
 import { useNavigate } from 'react-router-dom';
 import "./TaskCard.css"
 
-export const TaskList = () => {
+export const TaskList = ({getLoggedInUser}) => {
     const [tasks, setTasks] = useState([])
     const navigate = useNavigate();
 
@@ -37,7 +37,8 @@ export const TaskList = () => {
                         {tasks.map(task => <TaskCard
                             key={task.id}
                             task={task}
-                            handleDeleteTask={handleDeleteTask} />)}
+                            handleDeleteTask={handleDeleteTask} 
+                            getLoggedInUser={getLoggedInUser}/>)}
                     </div>
                 </section>
             </div>

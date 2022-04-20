@@ -3,7 +3,7 @@ const apiURL = 'http://localhost:8088'
 
 
 export const getArticles = () =>{
-    return fetch(`${apiURL}/articles/`)
+    return fetch(`${apiURL}/articles?_expand=user`)
         .then(response => response.json())
 }
 

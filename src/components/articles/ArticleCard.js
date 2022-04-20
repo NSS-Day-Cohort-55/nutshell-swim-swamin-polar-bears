@@ -7,7 +7,7 @@ import "./ArticleCard.css"
 
 export const ArticleCard = ({ article, handleDeleteArticle, getLoggedInUser }) => {
 
-    const user = getLoggedInUser()
+    const user = getLoggedInUser();
 
     return (
 
@@ -17,6 +17,7 @@ export const ArticleCard = ({ article, handleDeleteArticle, getLoggedInUser }) =
                 <a href={article.url} target="_blank"><h3>{article.title}</h3></a>
                 </div>
                 <div className="article_body">
+                    <h4>Posted By: {article.user?.name}</h4>
                     <p>{article.synopsis}</p>
                     {/* <a href={article.url} target="_blank">Read article</a> */}
                 </div>

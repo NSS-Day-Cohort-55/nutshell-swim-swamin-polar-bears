@@ -45,9 +45,13 @@
 #task_name{
     background-color: white;
 }
-#task_description{
+#description{
     background-color: white;
 }
-#task_completionDate{
+#completionDate{
     background-color: white;
+}
+
+.task_controlled_form {
+    color: black;
 }

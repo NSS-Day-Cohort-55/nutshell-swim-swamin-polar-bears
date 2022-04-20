@@ -34,10 +34,12 @@
   margin-left: 2em;
   z-index: 50;
 }
-#event_date{
+#date{
   background-color: white;
+  color: black;
 }
-#event_name{
+#name{
   background-color: white;
+  color: black;
 }
 
