@@ -41,3 +41,13 @@
     color: white;
     margin-top: 2em;
 }
+
+#task_name{
+    background-color: white;
+}
+#task_description{
+    background-color: white;
+}
+#task_completionDate{
+    background-color: white;
+}

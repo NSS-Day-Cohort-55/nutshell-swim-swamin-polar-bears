@@ -30,3 +30,29 @@
     border-radius: 10px;
     background: linear-gradient(0deg, rgb(156, 212, 180) 9%, rgb(86, 104, 93) 89%);
 }
+.new_message_form{
+    color: white;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+    margin-left: 3em;
+}
+#message_submit_btn{
+    background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
+    color: white;
+    width: 25%;
+    margin-top: 2em;
+}
+.edit_message_controlled_form{
+    background-color: white;
+}
+.edit_message_label{
+    color: white;
+    text-shadow: none;
+}
+.edit_message_form{
+    color: white;
+    margin-left: 3em;
+}

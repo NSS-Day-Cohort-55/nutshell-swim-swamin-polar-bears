@@ -17,7 +17,7 @@ export const FriendCard = ({ friend, handleDeleteFriend , getLoggedInUser }) => 
           </div>
           <div className="btn_container">
             <Link to={`/messages/new/${friend.user?.id}`}>
-              <button>Message</button>
+              <button id="message_btn">Message</button>
             </Link>
             <button type="button" id="unfriend_btn" onClick={() => handleDeleteFriend(friend.id)}>
               UnFriend

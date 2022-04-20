@@ -14,7 +14,7 @@
     background: linear-gradient(360deg, rgba(190, 24, 21, 1) 0%, rgba(43, 54, 72, 1) 100%);
     display: flex;
     justify-content: space-around;
-    color: #1BA361;
+    color: white;
     border-radius: 10px;
     margin-left: 1%;
     border-color: black 1px;
@@ -27,4 +27,8 @@
     color: white;
     background: linear-gradient(0deg, rgba(58, 148, 97, 1) 9%, rgba(33, 84, 55, 1) 89%);
     width: 100%;
+}
+.task_btn_container{
+    display: flex;
+    flex-direction: row-reverse;
 }
