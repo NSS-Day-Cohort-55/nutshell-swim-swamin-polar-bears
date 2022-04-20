@@ -13,6 +13,7 @@ export const TaskCard = ({ task, handleDeleteTask }) => {
         <h3><span className="card-taskname">
           {task.name}
         </span></h3>
+        <p>Posted By: {task.user?.name}</p>
         <p>Description: {task.description}</p>
         <p>Date Of Completion: {task.completionDate}</p>
         <div className="task_btn_container">

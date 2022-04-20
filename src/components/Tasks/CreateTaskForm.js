@@ -43,16 +43,16 @@ export const CreateTask= ({getLoggedInUser}) =>{
         <form>
             <h2>New Task</h2>
             <fieldset>
-                <label htmlFor="task_name">Task Name</label>
-                <input type="text" id="task_name" onChange={controlInput} required autoFocus className="controlled_form" placeholder="task title"value={Tasks.name} />
+                <label htmlFor="name">Task Name</label>
+                <input type="text" id="name" onChange={controlInput} required autoFocus className="controlled_form task_controlled_form" placeholder="task title"value={Tasks.name} />
             </fieldset>
             <fieldset>
-            <label htmlFor="task_description">Task Description</label>
-                <input type="text" id="task_description" onChange={controlInput} required autoFocus className="controlled_form" placeholder="task description" value={Tasks.description }/>
+            <label htmlFor="description">Task Description</label>
+                <input type="text" id="description" onChange={controlInput} required autoFocus className="task_controlled_form controlled_form" placeholder="task description" value={Tasks.description }/>
             </fieldset>
             <fieldset>
                 <label htmlFor="completionDate">Completion Date</label>
-                <input type="date" id="task_completionDate" onChange={controlInput} required autoFocus className="controlled_form" value={Tasks.completionDate} />
+                <input type="date" id="completionDate" onChange={controlInput} required autoFocus className="task_controlled_form controlled_form" value={Tasks.completionDate} />
             </fieldset>
             <button type="button" id="task_submit_btn" className="submit_btn" onClick={saveTask}>Submit</button>
 

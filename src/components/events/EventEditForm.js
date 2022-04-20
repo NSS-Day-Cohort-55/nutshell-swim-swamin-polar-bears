@@ -53,19 +53,19 @@ export const EventEditForm = ({getLoggedInUser}) => {
             <div className="new_event">
             <h2>Edit Event</h2>
             <fieldset>
-                <label htmlFor="event_name">Name Of Event:</label>
-                <input type="text" id="event_name" onChange={handleEventChanges} required autoFocus className= "event_controlled_form" placeholder="Event Title" value={eventObj.name}/>
+                <label htmlFor="name">Name Of Event:</label>
+                <input type="text" id="name" onChange={handleEventChanges} required autoFocus className= "event_controlled_form" placeholder="Event Title" value={eventObj.name}/>
             </fieldset>
             <fieldset>
-                <label htmlFor="event_date">Date Of Event:</label>
-                <input type="date" id="event_date" onChange={handleEventChanges} required autoFocus className="event_controlled__form" placeholder="Event Date" value={eventObj.date}/>
+                <label htmlFor="date">Date Of Event:</label>
+                <input type="date" id="date" onChange={handleEventChanges} required autoFocus className="event_controlled__form" placeholder="Event Date" value={eventObj.date}/>
             </fieldset>
             <fieldset>
-                <label htmlFor="event_description">Event Description:</label>
+                <label htmlFor="description">Event Description:</label>
                 <input type="text" id="description" className="form-control" onChange={handleEventChanges} value={eventObj.description}/>
             </fieldset>
             <fieldset>
-                <label htmlFor="event_location">Event Location:</label>
+                <label htmlFor="location">Event Location:</label>
                 <input type="location" id="location" className="form-control" onChange={handleEventChanges} value={eventObj.location}/>
             </fieldset>
             <button type="button" id="event_edit_cancel_btn" className="submit_btn" onClick={() => navigate("/events")}>Cancel</button>

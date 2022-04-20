@@ -50,12 +50,16 @@ export const UserList = ({ getLoggedInUser }) => {
     console.log(friendIdArr)
     const newFriend = {
       userId: id,
-      currentUserId: getLoggedInUser(),
+      currentUserId: getLoggedInUser()
+    };
+    const reverseFriend = {
+      userId: newFriend.currentUserId,
+      currentUserId: newFriend.userId
     };
     if (newFriend.userId !== newFriend.currentUserId && newFriend.userId !== friendIdArr.find(element => element === newFriend.userId)) {
       
         addFriend(newFriend)
-      .then(() => navigate("/friends/"));
+      .then(() => addFriend(reverseFriend).then(() => navigate("/friends/")));
       
     } else {
       window.alert(
