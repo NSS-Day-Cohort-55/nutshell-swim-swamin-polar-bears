@@ -13,6 +13,7 @@ import "./ArticleCard.css";
 export const SortArticlesByFriends = ({ getLoggedInUser }) => {
   const [friends, setFriends] = useState([]);
   const [articles, setArticles] = useState([]);
+  const navigate = useNavigate()
   //*getting all of the logged in users friends
   useEffect(() => {
     getMyFriends(getLoggedInUser()).then((myFriends) => setFriends(myFriends));
@@ -39,13 +40,26 @@ export const SortArticlesByFriends = ({ getLoggedInUser }) => {
 
   return (
     <>
+    <section className="articles_content">
+    </section>
+    <div className="articles_flex">
+      <Weather />
+      <section className="articles_card_container">
+      <div className="list_btn_container">
+      <button type="button" className="btn_article" onClick={() => {navigate("/create/");}} id="new_article_btn">Add new article</button>
+      <button type="button" className="btn_article" onClick={() => {navigate("/")}} id="friend_article_btn">All Articles</button>
+      </div>
       {articles.map((article) => (
-        <ArticleCard
-          key={article.id}
-          article={article}
-          getLoggedInUser={getLoggedInUser}
-        />
-      ))}
-    </>
+  <ArticleCard
+    key={article.id}
+    article={article}
+    getLoggedInUser={getLoggedInUser}
+  />
+))}
+      </section>
+    </div>
+  </>
   );
 };
+
+

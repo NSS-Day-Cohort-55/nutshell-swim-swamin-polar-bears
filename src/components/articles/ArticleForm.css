@@ -70,3 +70,17 @@ form input{
     width: 100%;
     color: white;
 }
+#article_edit_submit_btn{
+    flex: 1;
+    min-width: 50%;
+    border: none;
+     background: linear-gradient(180deg, rgba(27,163,97,1) 25%, rgba(43,134,105,1) 60%, rgba(30,97,76,1) 98%);;
+    color: white;
+}
+#article_edit_cancel_btn{
+    flex: 1;
+    min-width: 50%;
+    border: none;
+    background: linear-gradient(180deg, rgba(55,66,56,1) 14%, rgba(140,146,140,1) 86%, rgba(144,150,144,1) 100%);
+    color: white;
+}
