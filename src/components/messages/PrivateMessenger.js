@@ -42,7 +42,7 @@ export const PrivateMessenger = ({ getLoggedInUser }) => {
   }, []);
 
   return (
-    <div>
+    <div className='new_message_form'>
       <h2>New Message</h2>
       <fieldset>
         <div className="form-group">
@@ -65,20 +65,22 @@ export const PrivateMessenger = ({ getLoggedInUser }) => {
       </fieldset>
       <fieldset>
         <label htmlFor="body">Message Body: </label>
-        <input
+        <textarea
           type="text"
           id="body"
           onChange={controlInput}
+          rows='5'
+          cols='35'
           required
           autoFocus
-          className="controlled_form"
+          className="controlled_form public-message-body"
           placeholder="Got something to say?"
           value={message.body}
         />
       </fieldset>
       <button
         type="button"
-        id="article_submit_btn"
+        id="message_submit_btn"
         className="submit_btn"
         onClick={sendMessage}
       >

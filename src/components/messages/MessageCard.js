@@ -111,7 +111,9 @@ export const MessageCard = ({
               </Link>
             </>
           ) : (
-            ""
+            <Link to={`/messages/new/${sender.id}`}>
+                <button>Reply</button>
+              </Link>
           )}
         </div>
       </div>

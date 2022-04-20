@@ -7,7 +7,7 @@ import {
   addMessage,
 } from "../modules/MessageManager";
 import { MessageCard } from "./MessageCard";
-import "./MessageList.css"
+import "./MessageList.css";
 
 export const MessageList = ({ getLoggedInUser }) => {
   const [messages, setMessages] = useState([]);
@@ -28,7 +28,7 @@ export const MessageList = ({ getLoggedInUser }) => {
 
   useEffect(() => {
     getMessages();
-  }, []);
+  }, [messages]);
 
   return (
     <>
@@ -44,12 +44,12 @@ export const MessageList = ({ getLoggedInUser }) => {
             message.currentUserId === 0
           ) {
             return (
-              <MessageCard
-                key={message.id}
-                message={message}
-                handleDeleteMessage={handleDeleteMessage}
-                getLoggedInUser={getLoggedInUser}
-              />
+                <MessageCard
+                  key={message.id}
+                  message={message}
+                  handleDeleteMessage={handleDeleteMessage}
+                  getLoggedInUser={getLoggedInUser}
+                />
             );
           }
         })}

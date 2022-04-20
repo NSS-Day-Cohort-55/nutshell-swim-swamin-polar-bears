@@ -30,6 +30,11 @@
     border-radius: 10px;
     background: linear-gradient(0deg, rgb(156, 212, 180) 9%, rgb(86, 104, 93) 89%);
 }
+
+/* .container-cards {
+    width: 60%;
+} */
+
 .new_message_form{
     color: white;
     margin-top: 2em;
@@ -38,11 +43,13 @@
     align-content: center;
     width: 50%;
     margin-left: 3em;
+    height: 500px;
 }
 #message_submit_btn{
     background: linear-gradient(0deg, rgba(58,148,97,1) 9%, rgba(33,84,55,1) 89%);
     color: white;
-    width: 25%;
+    /* width: 25%; */
+    width: 18em;
     margin-top: 2em;
 }
 .edit_message_controlled_form{
@@ -56,3 +63,8 @@
     color: white;
     margin-left: 3em;
 }
+
+/* .textarea {
+    height: 300px;
+    overflow-wrap: normal;
+} */
